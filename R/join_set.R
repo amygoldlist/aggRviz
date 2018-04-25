@@ -1,4 +1,8 @@
 
+## A is a dataset with feature "a","b","proportion rate"
+## B is a dataset with feature "a","c","interesting rate"
+## The output will be a dataset with feature "a", "proportion rate", "interesting rate"
+
 
 #' Join 2 tables on the maximum overlapping set of features
 #'
@@ -10,14 +14,10 @@
 #'
 #' @return data.frame
 #' @export
-#'
-#' @examples
-#'
-#' A is a dataset with feature "a","b","proportion rate"
-#' B is a dataset with feature "a","c","interesting rate"
-#' The output will be a dataset with feature "a", "proportion rate", "interesting rate"
+#'@examples
 #'
 #'
+
 join_set <- function(x,y){#x,y can be two original datasets
   list_x = c()
   list_y = c()

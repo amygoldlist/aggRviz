@@ -20,9 +20,5 @@ and join two lowest datasets by common columns.
 }
 \examples{
 
-A is a dataset with feature "a","b","proportion rate"
-B is a dataset with feature "a","c","interesting rate"
-The output will be a dataset with feature "a", "proportion rate", "interesting rate"
-
 
 }

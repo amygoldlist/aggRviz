@@ -3,8 +3,8 @@
 #' @name aggrViz
 #' @docType package
 #' @importFrom magrittr %>%
-#' @import dplyr
 #' @import stats
+#' @import dplyr
 #' @import stringr
 #'
 

@@ -15,8 +15,6 @@
 #' @return data.frame
 #' @export
 #'
-#' @examples
-#'
 #'
 aggRviz_filter <- function(dat,col_2_delete){
   keepers <- dplyr::setdiff(names(dat),col_2_delete)

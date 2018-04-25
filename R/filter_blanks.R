@@ -9,7 +9,7 @@
 #' @export
 #'
 #' @examples
-#' filter_blanks(my_df)
+#'
 #'
 filter_blanks <- function(data){
   ### show data at the most granular level

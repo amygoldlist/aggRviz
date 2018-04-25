@@ -16,6 +16,6 @@ data.frame
 Create a filtered dataframe with no blanks
 }
 \examples{
-filter_blanks(my_df)
+
 
 }

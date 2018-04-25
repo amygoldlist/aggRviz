@@ -15,6 +15,6 @@ filter_blanks <- function(data){
   ### show data at the most granular level
   dat <- data %>%
     dplyr::mutate_if(is.factor, dplyr::na_if, y='') %>%
-    na.omit()
+    stats::na.omit()
   return(dat)
 }

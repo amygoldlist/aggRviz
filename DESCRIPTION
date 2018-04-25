@@ -10,11 +10,10 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.0.1
-Imports: 
+Imports:
     dplyr,
     stats,
     stringr,
-    from 
 Suggests: testthat,
     knitr,
     rmarkdown

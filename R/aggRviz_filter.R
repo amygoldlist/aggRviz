@@ -14,8 +14,8 @@
 #' @export
 #'
 #' @examples
-#' aggRviz_filter(dat = my_df, col_2_delete = c("Gender", "Age"))
-#' returns data.frame without stratification by gender or age
+#' aggRviz_filter(dat = data.frame(Age=c(18,","), Gender = c("f","","m"), Location=c("Vancouver, "Toronto, "Vancouver),measure = c(.5,.6,.2)), col_2_delete = c("Gender", "Age"))
+#' returns data.frame without stratification by gender or age (so only the 2nd row)
 #' but stratified by all other features.
 #'
 #'

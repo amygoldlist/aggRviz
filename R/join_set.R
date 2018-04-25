@@ -48,10 +48,10 @@ join_set <- function(x,y){#x,y can be two original datasets
 
   #use `filter_blanks()` and `aggrViz_filter()` to deal with blanks
   if (length(list_x) != 0){
-    x = x %>% aggrViz_filter(list_x)}
+    x = x %>% aggRviz_filter(list_x)}
   else {x = x %>% filter_blanks()}
   if (length(list_y) != 0){
-    y = y %>% aggrViz_filter(list_y)}
+    y = y %>% aggRviz_filter(list_y)}
   else {y = y %>% filter_blanks()}
 
   return(dplyr::inner_join(x,y))

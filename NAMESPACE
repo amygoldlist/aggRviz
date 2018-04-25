@@ -3,3 +3,4 @@
 export(aggRviz_filter)
 export(filter_blanks)
 export(join_set)
+importFrom(magrittr,"%>%")

@@ -1,8 +1,3 @@
-### filter out any variables
-
-##require(dplyr)
-
-### example:  aggrViz(dat = my_df, col_2_delete = c("Gender", "Age"))
 
 
 #' Filter aggregated data to a chosen level
@@ -24,7 +19,7 @@
 #' but stratified by all other features.
 #'
 #'
-aggrViz_filter <- function(dat,col_2_delete){
+aggRviz_filter <- function(dat,col_2_delete){
   keepers <- dplyr::setdiff(names(dat),col_2_delete)
   #print(keepers)
   dat <- dat %>%

@@ -1,6 +1,3 @@
-####################################################
-## Make a filter to lowest level function
-####################################################
 
 #' Filter aggregated data to the most granular level
 #'

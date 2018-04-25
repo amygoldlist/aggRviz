@@ -5,15 +5,25 @@
 ### example:  aggrViz(dat = my_df, col_2_delete = c("Gender", "Age"))
 
 
-#' Title
+#' Filter aggregated data to a chosen level
 #'
-#' @param dat
-#' @param col_2_delete
+#' The columns to delete are the features that you DO NOT want to stratify by.
+#' This function filters out any row, stratified by those columns,
+#' and filters out any unstratified rows from the other features.
 #'
-#' @return
+#'
+#' @param dat data.frame
+#' @param col_2_delete vector
+#'
+#' @return data.frame
 #' @export
 #'
 #' @examples
+#' aggrViz(dat = my_df, col_2_delete = c("Gender", "Age"))
+#' returns a data frame without stratification by gender or age
+#' but stratified by all other features.
+#'
+#'
 aggrViz_filter <- function(dat,col_2_delete){
   keepers <- dplyr::setdiff(names(dat),col_2_delete)
   #print(keepers)

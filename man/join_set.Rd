@@ -15,7 +15,7 @@ join_set(x, y)
 data.frame
 }
 \description{
-This function will pick key column (such as "retention rate" or proportion rate)
+This function will pick key column (such as "interesting rate" or proportion rate)
 and join two lowest datasets by common columns.
 }
 \examples{

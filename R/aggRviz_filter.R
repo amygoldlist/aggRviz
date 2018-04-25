@@ -1,6 +1,6 @@
 ### filter out any variables
 
-require(dplyr)
+##require(dplyr)
 
 ### example:  aggrViz(dat = my_df, col_2_delete = c("Gender", "Age"))
 

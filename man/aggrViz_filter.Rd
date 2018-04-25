@@ -20,8 +20,8 @@ This function filters out any row, stratified by those columns,
 and filters out any unstratified rows from the other features.
 }
 \examples{
-aggRviz(dat = my_df, col_2_delete = c("Gender", "Age"))
-returns a data frame without stratification by gender or age
+aggRviz_filter(dat = my_df, col_2_delete = c("Gender", "Age"))
+returns data.frame without stratification by gender or age
 but stratified by all other features.
 
 

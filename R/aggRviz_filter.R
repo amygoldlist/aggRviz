@@ -5,6 +5,15 @@
 ### example:  aggrViz(dat = my_df, col_2_delete = c("Gender", "Age"))
 
 
+#' Title
+#'
+#' @param dat
+#' @param col_2_delete
+#'
+#' @return
+#' @export
+#'
+#' @examples
 aggrViz_filter <- function(dat,col_2_delete){
   keepers <- dplyr::setdiff(names(dat),col_2_delete)
   #print(keepers)

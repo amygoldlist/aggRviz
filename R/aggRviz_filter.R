@@ -2,6 +2,8 @@
 
 require(dplyr)
 
+### example:  aggrViz(dat = my_df, col_2_delete = c("Gender", "Age"))
+
 
 aggrViz_filter <- function(dat,col_2_delete){
   keepers <- dplyr::setdiff(names(dat),col_2_delete)

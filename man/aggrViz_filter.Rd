@@ -19,3 +19,7 @@ The columns to delete are the features that you DO NOT want to stratify by.
 This function filters out any row, stratified by those columns,
 and filters out any unstratified rows from the other features.
 }
+\examples{
+
+
+}

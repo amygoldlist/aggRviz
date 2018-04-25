@@ -3,4 +3,7 @@
 export(aggRviz_filter)
 export(filter_blanks)
 export(join_set)
+import(dplyr)
+import(stats)
+import(stringr)
 importFrom(magrittr,"%>%")

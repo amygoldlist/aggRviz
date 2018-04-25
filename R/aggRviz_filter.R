@@ -10,8 +10,6 @@
 #' @param dat data.frame
 #' @param col_2_delete vector
 #'
-#' @importFrom magrittr %>%
-#' @importFrom magrittr .
 #'
 #'
 #' @return data.frame

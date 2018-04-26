@@ -8,9 +8,9 @@ Author: Authors@R: c(
     person("Fang", "Yang", email = "", role = c("aut")),
 )
 Maintainer: Amy Goldlist <amygoldlist@gmail.com>
-Description: Large datasets can lead to privacy violations.  In order to deal with this, it's common to have aggregated data.  This leads to increased security, but can make data analysis more difficult.
-    This package helps to wrangle, organize and visualize anonymized and aggregated data, using sensible tools to filter down to a single aggregation leval, and join datasets where soem features may be missing.
-    Use four spaces when indenting paragraphs within the Description.
+Description:
+    Large datasets can lead to privacy violations.  In order to deal with this, it's common to have aggregated data.  This leads to increased security, but can make data analysis more difficult.
+    This package helps to wrangle, organize and visualize anonymized and aggregated data, using sensible tools to filter down to a single aggregation level, and join datasets where some features may be missing.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true

@@ -4,24 +4,29 @@ library(dplyr)
 dat <- read.csv("sample_data.csv")
 
 
+
 ##create datasets
 
 dat_1 <- dat %>%
+  filter(Sweet_or_Salty== "")%>%
   select(Colour, Dessert, Fruit, measure_1) %>%
-  sample_n(40)
+  sample_n(10)
 
 dat_2 <- dat %>%
+  filter(Dessert== "") %>%
   select(Colour, Sweet_or_Salty, Fruit, measure_2) %>%
-  sample_n(36)
+  sample_n(16)
 
 
 dat_3 <- dat %>%
+  filter(Colour== "") %>%
   select(Dessert, Sweet_or_Salty, Fruit, measure_3) %>%
-  sample_n(56)
+  sample_n(26)
 
 dat_4 <- dat %>%
+  filter(Sweet_or_Salty== "" | Fruit == "") %>%
   select(Dessert, Colour, measure_4) %>%
-  sample_n(43)
+  sample_n(13)
 
 
 write.csv(dat_1, "example_data/measure_1.csv")

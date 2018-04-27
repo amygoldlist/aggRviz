@@ -35,6 +35,9 @@ test_that('aggRviz_filter basic functionality', {
 
   expect_is(aggRviz_filter(df_noblanks, c("g1","a")),'data.frame')
   expect_is(aggRviz_filter(df_blanks, c("g2","b")),'data.frame')
+  expect_error(aggRviz_filter(5, c("5")))
+  expect_error(aggRviz_filter(df_blanks, c("5")))
+  expect_error(aggRviz_filter(df_blanks, df_noblanks))
   #expect_equivalent(aggRviz_filter(df_noblanks, c("g1","a")), df_empty)
   #expect_equivalent(filter_blanks(df_blanks), df_blanks_filtered)
 

@@ -2,10 +2,14 @@ Package: aggRviz
 Type: Package
 Title: A package for dealing with data aggregated at many levels
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
+Author: Authors@R: c(
+    person("Amy", "Goldlist", email = "amygoldlist@gmail.com", role = c("aut", "trl", "cre")),
+    person("Susan", "Fang", email = "", role = c("aut")),
+    person("Fang", "Yang", email = "", role = c("aut")))
+Maintainer: Amy Goldlist <amygoldlist@gmail.com>
+Description:
+    Large datasets can lead to privacy violations.  In order to deal with this, it's common to have aggregated data.  This leads to increased security, but can make data analysis more difficult.
+    This package helps to wrangle, organize and visualize anonymized and aggregated data, using sensible tools to filter down to a single aggregation level, and join datasets where some features may be missing.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true

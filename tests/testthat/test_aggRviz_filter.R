@@ -17,17 +17,12 @@ df_blanks <- data.frame(
 )
 
 df_blanks_filtered <- data.frame(
-  g1 = c("1",  "2",  "2"),
-  g2 = c("1",  '1',  "1"),
-  a = c("a", "c",  "e"),
-  b = c("q","e","t")
+  g2 = c("2"),
+  a = c("b"),
+  b = c("w")
 )
 
 df_empty <- dplyr::select(dplyr::filter(df_blanks,g1 == "aggRviz"),b, g2)
-
-
-
-
 
 
 
@@ -36,8 +31,8 @@ test_that('aggRviz_filter basic functionality', {
   expect_is(aggRviz_filter(df_noblanks, c("g1","a")),'data.frame')
   expect_is(aggRviz_filter(df_blanks, c("g2","b")),'data.frame')
 
-  #expect_equivalent(aggRviz_filter(df_noblanks, c("g1","a")), df_empty)
-  #expect_equivalent(filter_blanks(df_blanks), df_blanks_filtered)
+  #expect_equal(aggRviz_filter(df_noblanks, c("g1","a")), df_empty)
+  expect_equivalent(aggRviz_filter(df_blanks, c("g1")), df_blanks_filtered)
 
   })
 

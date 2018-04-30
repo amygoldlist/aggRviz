@@ -4,12 +4,12 @@
 \alias{aggRviz_filter}
 \title{Filter aggregated data to a chosen level}
 \usage{
-aggRviz_filter(dat, col_2_delete)
+aggRviz_filter(data, col_2_delete)
 }
 \arguments{
-\item{dat}{data.frame}
-
 \item{col_2_delete}{vector}
+
+\item{dat}{data.frame}
 }
 \value{
 data.frame

@@ -19,6 +19,13 @@
 #'
 
 join_set <- function(x,y){#x,y can be two original datasets
+  if (!is.data.frame(x)){
+    stop("Error: x should be a dataframe!")
+  }
+  if (!is.data.frame(y)){
+    stop("Error: y should be a dataframe!")
+  }
+
   list_x = c()
   list_y = c()
   #check common columns

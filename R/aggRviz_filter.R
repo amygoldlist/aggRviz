@@ -16,21 +16,22 @@
 #' @export
 #'
 #'
-aggRviz_filter <- function(dat,col_2_delete){
- # if (!is.vector(col_2_delete)){
-  #  stop("Error! col_2_delete needs to be a vector")
-#  }
+aggRviz_filter <- function(data,col_2_delete){
+  if (!is.data.frame(data)){
+    stop("Error: data should be a dataframe!")
+  }
+  if (!is.vector(col_2_delete)){
+    stop("Error! col_2_delete needs to be a vector!")
+  }
 
- # if (!is.data.frame(dat)){
-  #  stop("Error! dat should be a dataframe")
-#  }
- # if (union(names(dat), col_2_delete) != names(dat)){
+
+ # if (union(names(data), col_2_delete) != names(dat)){
   #  stop("col_2_delete contains soemthing that is not a column in the data.frame")
 #  }
 
-   keepers <- dplyr::setdiff(names(dat),col_2_delete)
+   keepers <- dplyr::setdiff(names(data),col_2_delete)
   #print(keepers)
-  dat <- dat %>%
+  dat <- data %>%
     ## all_vars gets rid of all that have at least one, any gets rid of both
     dplyr::filter_at(col_2_delete, dplyr::all_vars(. =="")) %>%
     ### select only the good stuff

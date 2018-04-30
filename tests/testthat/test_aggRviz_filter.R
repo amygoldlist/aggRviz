@@ -35,13 +35,21 @@ test_that('aggRviz_filter basic functionality', {
 
   expect_is(aggRviz_filter(df_noblanks, c("g1","a")),'data.frame')
   expect_is(aggRviz_filter(df_blanks, c("g2","b")),'data.frame')
-  expect_error(aggRviz_filter(5, c("5")))
-  expect_error(aggRviz_filter(df_blanks, c("5")))
-  expect_error(aggRviz_filter(df_blanks, df_noblanks))
+
   #expect_equivalent(aggRviz_filter(df_noblanks, c("g1","a")), df_empty)
   #expect_equivalent(filter_blanks(df_blanks), df_blanks_filtered)
 
   })
 
+test_that('aggRviz_filter errors', {
 
+  expect_error(aggRviz_filter(5, c("5")), "Error: data should be a dataframe!")
+  expect_error(aggRviz_filter(c(5,6,7), c("5")), "Error: data should be a dataframe!")
+  expect_error(aggRviz_filter(df_blanks, c("5")),"Evaluation error: object '5' not found.")
+  expect_error(aggRviz_filter(df_blanks, df_noblanks),"Error! col_2_delete needs to be a vector!")
+  expect_error(aggRviz_filter(6, df_noblanks),"Error: data should be a dataframe!")
+
+
+
+})
 

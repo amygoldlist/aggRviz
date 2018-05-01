@@ -2,6 +2,7 @@
 
 export(aggR_possible)
 export(aggRviz_filter)
+export(aggRviz_filter2)
 export(filter_blanks)
 export(join_set)
 import(dplyr)

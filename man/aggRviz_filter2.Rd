@@ -5,10 +5,15 @@
 \title{Filter aggregated data to a chosen level
 EXPERIMENT!!!}
 \usage{
-aggRviz_filter2(data, col_2_delete = NULL, col_2_keep = NULL)
+aggRviz_filter2(data, col_2_delete = NULL, col_2_keep = NULL,
+  all_symbol = "")
 }
 \arguments{
 \item{col_2_delete}{vector}
+
+\item{col_2_keep}{vector}
+
+\item{all_symbol}{}
 
 \item{dat}{data.frame}
 }
@@ -22,4 +27,7 @@ and filters out any unstratified rows from the other features.
 }
 \details{
 OPTION:  col_2_keep lets you filter "in"
+
+Option:  if it's not a blank for all categories, set all_symbol
+This could be NA, or " " or "all".
 }

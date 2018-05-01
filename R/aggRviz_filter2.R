@@ -9,9 +9,14 @@
 #'
 #' OPTION:  col_2_keep lets you filter "in"
 #'
+#' Option:  if it's not a blank for all categories, set all_symbol
+#' This could be NA, or " " or "all".
+#'
 #'
 #' @param dat data.frame
 #' @param col_2_delete vector
+#' @param col_2_keep vector
+#' @param all_symbol
 #'
 #'
 #'
@@ -19,7 +24,7 @@
 #' @export
 #'
 #'
-aggRviz_filter2 <- function(data,col_2_delete = NULL, col_2_keep = NULL){
+aggRviz_filter2 <- function(data,col_2_delete = NULL, col_2_keep = NULL, all_symbol = ""){
   if (!is.data.frame(data)){
     stop("Error: data should be a dataframe!")
   }
@@ -62,7 +67,7 @@ aggRviz_filter2 <- function(data,col_2_delete = NULL, col_2_keep = NULL){
 
   dat <- data %>%
     ## all_vars gets rid of all that have at least one, any gets rid of both
-    dplyr::filter_at(col_2_delete, dplyr::all_vars(. =="")) %>%
+    dplyr::filter_at(col_2_delete, dplyr::all_vars(. == all_symbol)) %>%
     ### select only the good stuff
     dplyr::select(dplyr::one_of(keepers))
     ### kill all the blanks!!

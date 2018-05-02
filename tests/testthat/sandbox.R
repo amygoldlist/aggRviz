@@ -1,5 +1,7 @@
 library(dplyr)
 load("example_data/yummy.Rda")
+library(rlang)
+
 
 dat_1
 
@@ -34,3 +36,31 @@ df
 feat_names <- c("Colour", "Sweet_or_Salty", "Fruit", "Dessert")
 
 ### add stuff:
+
+
+dat <- dat_1
+
+dat
+
+col_2_rename <- c("Colour", "Dessert")
+
+###works
+dat %>%
+  select(!!col_2_rename)
+
+dat %>%
+  rename_(one_of(paste0(col_2_rename,"_x")) = one_of(col_2_rename))
+
+dat %>%
+  rename(cake = Dessert)
+
+
+dplyr::select(dplyr::one_of(keepers))
+
+dat %>%
+  rename(!!paste0(col_2_rename,"_x"):= col_2_rename)
+
+
+dat %>%
+  rename_at(vars(col_2_rename), ~paste0(col_2_rename,"_x"))
+

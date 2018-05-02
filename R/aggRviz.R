@@ -4,7 +4,7 @@
 #' @docType package
 #' @importFrom magrittr %>%
 #' @importFrom utils combn
-#' @import stats
+#'
 #' @import dplyr
 #' @import stringr
 #'

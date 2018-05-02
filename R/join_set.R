@@ -43,13 +43,13 @@ join_set <- function(x,y){#x,y can be two original datasets
   #check key column in the first dataset
   for (i in 1:length(list_x)){
     if (T %in% stringr::str_detect(list_x[i],c("measure","rate")) == T){
-      list_x = list_x %>% setdiff(list_x[i])
+      list_x = list_x %>% dplyr::setdiff(list_x[i])
     }
   }
   #check key column in the second dataset
   for (i in 1:length(list_y)){
     if (T %in% stringr::str_detect(list_y[i],c("measure","rate")) == T){
-      list_y = list_y %>% setdiff(list_y[i])
+      list_y = list_y %>% dplyr::setdiff(list_y[i])
     }
   }
 

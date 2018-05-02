@@ -1,7 +1,7 @@
 library(dplyr)
 
 ## read in data
-dat <- read.csv("sample_data.csv")
+dat <- read.csv("example_data/sample_data.csv", row.names = NULL)
 
 
 
@@ -28,8 +28,12 @@ dat_4 <- dat %>%
   select(Dessert, Colour, measure_4) %>%
   sample_n(13)
 
+## save them as datasets:
 
-write.csv(dat_1, "example_data/measure_1.csv")
-write.csv(dat_2, "example_data/measure_2.csv")
-write.csv(dat_3, "example_data/measure_3.csv")
-write.csv(dat_4, "example_data/measure_4.csv")
+save(dat_1,dat_2,dat_3, dat_4, file = "example_data/yummy.Rda")
+
+
+#write.csv(dat_1, "example_data/measure_1.csv")
+#write.csv(dat_2, "example_data/measure_2.csv")
+#write.csv(dat_3, "example_data/measure_3.csv")
+#write.csv(dat_4, "example_data/measure_4.csv")

@@ -33,5 +33,4 @@ vignettes/*.pdf
 *.knit.md
 .Rproj.user
 
-# Data file for experiments
-/data/**
+

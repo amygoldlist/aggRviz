@@ -71,7 +71,8 @@ aggRviz_filter2 <- function(data,col_2_delete = NULL, col_2_keep = NULL, all_sym
     ### select only the good stuff
     dplyr::select(dplyr::one_of(keepers))
     ### kill all the blanks!!
-  dat <- filter_blanks(dat)
+  dat <- filter_blanks(dat, all_symbol)
+
   return(dat)
 }
 

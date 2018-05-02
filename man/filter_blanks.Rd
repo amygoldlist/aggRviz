@@ -4,10 +4,12 @@
 \alias{filter_blanks}
 \title{Filter aggregated data to the most granular level}
 \usage{
-filter_blanks(data)
+filter_blanks(data, all_symbol = "")
 }
 \arguments{
 \item{data}{data.frame}
+
+\item{all_symbol}{}
 }
 \value{
 data.frame

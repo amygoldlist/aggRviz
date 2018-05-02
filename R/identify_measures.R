@@ -5,11 +5,11 @@
 #' @param data data.frame
 #' @param key vector
 #'
-#' @return
+#' @return vector
 #' @export
 #'
 #' @examples
-identify_measures <- function(data, key){
+identify_measures <- function(data, key = c("measure", "rate")){
 
   list_y <- c()
 
@@ -21,4 +21,5 @@ identify_measures <- function(data, key){
 
     }
   }
+  return(list_y)
 }

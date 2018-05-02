@@ -35,7 +35,7 @@ aggRviz_join_set <- function(x,y, key = c("measure","rate"),col_2_ignore = NULL,
     stop("Error: y should be a dataframe!")
   }
 
-  if !is.null(col_2_ignore){
+  if (!is.null(col_2_ignore)){
     ### FILL IN THIS BIT!!
     ## rename each column in each dataframe
     ## by appending an x or y to the end of the column

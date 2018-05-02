@@ -1,7 +1,7 @@
 library(dplyr)
 
 ## read in data
-dat <- read.csv("example_data/sample_data.csv")
+dat <- read.csv("example_data/sample_data.csv", row.names = NULL)
 
 
 

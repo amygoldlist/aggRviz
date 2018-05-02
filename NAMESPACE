@@ -3,7 +3,7 @@
 export(aggR_possible)
 export(aggRviz_filter)
 export(aggRviz_filter2)
-export(aggRviz_join_set)
+export(aggRviz_join)
 export(filter_blanks)
 export(identify_measures)
 export(join_set)

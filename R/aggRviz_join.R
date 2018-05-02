@@ -25,7 +25,7 @@
 #'
 #'
 
-aggRviz_join_set <- function(x,y, key = c("measure","rate"),col_2_ignore = NULL, all_symbol = ""){
+aggRviz_join <- function(x,y, key = c("measure","rate"), col_2_ignore = NULL, all_symbol = ""){
   #x,y can be two original datasets
 
   if (!is.data.frame(x)){
@@ -35,53 +35,59 @@ aggRviz_join_set <- function(x,y, key = c("measure","rate"),col_2_ignore = NULL,
     stop("Error: y should be a dataframe!")
   }
 
-  if (!is.null(col_2_ignore)){
+  #if (!is.null(col_2_ignore)){
     ### FILL IN THIS BIT!!
     ## rename each column in each dataframe
     ## by appending an x or y to the end of the column
-  }
+  #}
 
 
   ### Get a list of columns in both
   common_columns <- intersect(names(x),names(y))
 
-  ### Get a list of columns in only 1 df
-  list_x <- dplyr::setdiff(names(x), common_columns)
-  list_y <- dplyr::setdiff(names(y), common_columns)
 
-
-  #check key column in the first dataset
-  for (i in 1:length(list_x)){
-    if (T %in% stringr::str_detect(list_x[i],key) == TRUE){
-      list_x <-
-        list_x %>%
-        setdiff(list_x[i])
-    }
-  }
-
-  #check key column in the second dataset
-  for (i in 1:length(list_y)){
-    if (T %in% stringr::str_detect(list_y[i], key) == TRUE){
-      list_y <-
-        list_y %>%
-        setdiff(list_y[i])
-    }
-  }
-
-  ####PASSS:
-  ### BElow this isn't correct, we need to join first I think.
+  ### find the key columns in x and y :
+  list_x <- identify_measures(x, key = key)
+  list_y <- identify_measures(y, key = key)
 
 
 
-  #use `filter_blanks()` and `aggrViz_filter()` to deal with blanks
-  if (length(list_x) != 0){
-    x  <-  x %>%
-      aggRviz_filter(list_x, all_symbol = all_symbol)
-    }
-  else {x = x %>% filter_blanks()}
-  if (length(list_y) != 0){
-    y = y %>% aggRviz_filter(list_y)}
-  else {y = y %>% filter_blanks()}
+   # Get a list of columns in only 1 df
 
-  return(dplyr::inner_join(x,y))
+  delete_x <- names(x) %>%
+    dplyr::setdiff(common_columns) %>%
+    dplyr::setdiff(list_x) %>%
+    dplyr::setdiff(col_2_ignore)
+
+  delete_y <- names(y) %>%
+    dplyr::setdiff(common_columns) %>%
+    dplyr::setdiff(list_y) %>%
+    dplyr::setdiff(col_2_ignore)
+
+
+
+  ### filter to only blanks in the columns to delete
+  ### deselect columns to delete
+
+  x <- x %>%
+    ## all_vars gets rid of all that have at least one, any gets rid of both
+    dplyr::filter_at(delete_x, dplyr::all_vars(. == all_symbol)) %>%
+    ### select only the good stuff
+    dplyr::select(-dplyr::one_of(delete_x))
+
+  y <- y %>%
+    ## all_vars gets rid of all that have at least one, any gets rid of both
+    dplyr::filter_at(delete_y, dplyr::all_vars(. == all_symbol)) %>%
+    ### select only the good stuff
+    dplyr::select(-dplyr::one_of(delete_y))
+
+
+  ### inner_join the 2 datasets.
+  dat <- dplyr::inner_join(x,y)
+
+
+  ### NOW we would need to filter....
+
+
+  return(dat)
 }

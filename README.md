@@ -22,11 +22,12 @@ Created by</a></h5>
 
 [![Build Status](https://travis-ci.org/amygoldlist/aggRviz.svg?branch=master)](https://travis-ci.org/amygoldlist/aggRviz)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-[![GitHub forks](https://img.shields.io/github/forks/amygoldlist/aggRviz.svg?style=social)](https://github.com/UBC-MDS/ptoolkit/network)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-[![GitHub issues](https://img.shields.io/github/issues/amygoldlist/aggRviz.svg?style=social)](https://github.com/UBC-MDS/ptoolkit/issues)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-[![GitHub license](https://img.shields.io/github/license/amygoldlist/aggRviz.svg?style=social)](https://github.com/amygoldlist/aggRviz/blob/master/LICENSE)
+[![GitHub forks](https://img.shields.io/github/forks/amygoldlist/aggRviz.svg?style=social)](https://github.com/amygoldlist/aggRviz/network)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+[![GitHub issues](https://img.shields.io/github/issues/amygoldlist/aggRviz.svg?style=social)](https://github.com/amygoldlist/aggRviz/issues)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/amygoldlist/aggRviz/LICENSE)
+&nbsp;&nbsp;&nbsp;&nbsp;
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/amygoldlist/aggRvviz/CONTRIBUTING.md)
 </a></h4>
-
 ### To Install:
 
 `devtools::install_github("amygoldlist/aggRviz")`

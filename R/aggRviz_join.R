@@ -35,11 +35,28 @@ aggRviz_join <- function(x,y, key = c("measure","rate"), col_2_ignore = NULL, al
     stop("Error: y should be a dataframe!")
   }
 
-  #if (!is.null(col_2_ignore)){
+  if (!is.null(col_2_ignore)){
+
+    if (!is.vector(col_2_ignore)){
+      stop("Error:  please enter a vector of columns to ignore!")
+    }
+
     ### FILL IN THIS BIT!!
     ## rename each column in each dataframe
     ## by appending an x or y to the end of the column
-  #}
+    col_2_rename <-
+      col_2_ignore %>%
+      intersect(names(x)) %>%
+      intersect(names(y))
+
+    x <-
+      x %>%
+      dplyr::rename_at(dplyr::vars(col_2_rename), ~paste0(col_2_rename,"_x"))
+
+    y <-
+      y %>%
+      dplyr::rename_at(dplyr::vars(col_2_rename), ~paste0(col_2_rename,"_y"))
+  }
 
 
   ### Get a list of columns in both

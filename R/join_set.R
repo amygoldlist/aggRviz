@@ -1,4 +1,3 @@
-
 ## A is a dataset with feature "a","b","proportion rate"
 ## B is a dataset with feature "a","c","interesting rate"
 ## The output will be a dataset with feature "a", "proportion rate", "interesting rate"
@@ -25,7 +24,7 @@ join_set <- function(x,y){#x,y can be two original datasets
   if (!is.data.frame(y)){
     stop("Error: y should be a dataframe!")
   }
-
+  
   list_x = c()
   list_y = c()
   #check common columns
@@ -39,7 +38,7 @@ join_set <- function(x,y){#x,y can be two original datasets
       list_y = c(list_y,j)
     }
   }
-
+  
   #check key column in the first dataset
   for (i in 1:length(list_x)){
     if (T %in% stringr::str_detect(list_x[i],c("measure","rate")) == T){
@@ -52,7 +51,7 @@ join_set <- function(x,y){#x,y can be two original datasets
       list_y = list_y %>% dplyr::setdiff(list_y[i])
     }
   }
-
+  
   #use `filter_blanks()` and `aggrViz_filter()` to deal with blanks
   if (length(list_x) != 0){
     x = x %>% aggRviz_filter(list_x)}
@@ -60,6 +59,6 @@ join_set <- function(x,y){#x,y can be two original datasets
   if (length(list_y) != 0){
     y = y %>% aggRviz_filter(list_y)}
   else {y = y %>% filter_blanks()}
-
+  
   return(dplyr::inner_join(x,y))
 }

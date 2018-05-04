@@ -41,7 +41,7 @@ aggRviz_filter2 <- function(data,col_2_delete = NULL, col_2_keep = NULL, feature
   }
 
   ### checks for features:
-  col_features <- c()
+  col_features <- names(data)
 
   if (!is.null(features)){
     if(!is.vector(features)){
@@ -57,14 +57,10 @@ aggRviz_filter2 <- function(data,col_2_delete = NULL, col_2_keep = NULL, feature
       stop("Error! col_2_delete needs to be a vector!")
     }
 
- # if (union(names(data), col_2_delete) != names(dat)){
-  #  stop("col_2_delete contains soemthing that is not a column in the data.frame")
 
-    if (length(col_features)!= 0){
-      col_2_delete <- intersect(col_2_delete, col_features)
-    }
+    col_2_delete <- dplyr::intersect(col_2_delete, col_features)
 
-    keepers <- dplyr::setdiff(names(data),col_2_delete)
+    keepers <- dplyr::setdiff(col_features,col_2_delete)
   }
 
 ### if we're looking at keeping columns.
@@ -73,13 +69,9 @@ aggRviz_filter2 <- function(data,col_2_delete = NULL, col_2_keep = NULL, feature
       stop("Error! col_2_keep needs to be a vector!")
     }
 
-# if (union(names(data), col_2_delete) != names(dat)){
-#  stop("col_2_delete contains soemthing that is not a column in the data.frame")
 
-
-
-    keepers <- dplyr::union(col_2_keep, col_features)
-    col_2_delete <- dplyr::setdiff(names(data), keepers)
+    keepers <- dplyr::intersect(col_2_keep, col_features)
+    col_2_delete <- dplyr::setdiff(col_features, keepers)
   }
 
 

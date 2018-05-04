@@ -13,9 +13,9 @@
 #' examples: datalist <- read_all_csv_skip_n(path)
 #' The first csv is datalist[[1]]
 #'
-#' @param path
-#' @param n
-#' @param pattern
+#' @param path character
+#' @param n integer
+#' @param pattern character
 #'
 #' @return list
 #' @export
@@ -23,7 +23,7 @@
 #' @examples
 read_all_csv_skip_n<- function(path,n=2, pattern = "*.csv") {
 
-  skipn <- function(x,y=n) read.csv(x,skip = y)
+  skipn <- function(x,y=n) utils::read.csv(x,skip = y)
 
   files = list.files(path, pattern, full.names = TRUE)
   lapply(files, skipn)

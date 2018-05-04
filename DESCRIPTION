@@ -15,10 +15,12 @@ Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.0.1
 Imports:
+    clustMixType,
+    graphics,
     stats,
     dplyr,
     stringr,
-    magrittr
+    magrittr,
 Suggests: testthat,
     knitr,
     rmarkdown

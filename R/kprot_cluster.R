@@ -9,15 +9,25 @@
 
 # dat1, dat2 should be the clean dataset with no blank.
 # n is the cluster number
+#' Title
+#'
+#' @param dat1 data.frame
+#' @param dat2 data.frame
+#' @param n integer
+#'
+#' @return
+#' @export
+#'
+#' @examples
 kprot_cluster <- function(dat1,dat2,n){
   #join two dataset
   test <- join_set(dat1,dat2)
-  
+
   if (nrow(test)!=0){
-  
+
   #k-prototype cluster
-  kp <- kproto(test,n)
-  
+  kp <- clustMixType::kproto(test,n)
+
   #identify key features
   key <- c()
   for (i in 1:length(names(test))){
@@ -25,10 +35,10 @@ kprot_cluster <- function(dat1,dat2,n){
       key = c(key,i)
     }
   }
-  
+
   #plot cluster map
-  
-  return(plot(test[,key], col = kp$cluster))
+
+  return(graphics::plot(test[,key], col = kp$cluster))
   }
   else{
     print("lowest level data set has 0 row")

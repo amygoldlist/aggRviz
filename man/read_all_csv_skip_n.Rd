@@ -7,7 +7,11 @@
 read_all_csv_skip_n(path, n = 2, pattern = "*.csv")
 }
 \arguments{
-\item{pattern}{}
+\item{path}{character}
+
+\item{n}{integer}
+
+\item{pattern}{character}
 }
 \value{
 list

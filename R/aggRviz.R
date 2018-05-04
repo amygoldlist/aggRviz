@@ -4,6 +4,9 @@
 #' @docType package
 #' @importFrom magrittr %>%
 #' @importFrom utils combn
+#' @importFrom clustMixType kproto
+#' @importFrom graphics plot
+#' @importFrom utils read.csv
 #'
 #' @import dplyr
 #' @import stringr

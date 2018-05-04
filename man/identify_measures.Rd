@@ -7,7 +7,7 @@
 identify_measures(data, key = c("measure", "rate"))
 }
 \arguments{
-\item{data}{data.frame}
+\item{data}{data.frame or vector}
 
 \item{key}{vector}
 }

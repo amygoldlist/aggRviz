@@ -2,7 +2,7 @@
 
 #' Title
 #'
-#' @param data data.frame
+#' @param data data.frame or vector
 #' @param key vector
 #'
 #' @return vector
@@ -11,13 +11,21 @@
 #' @examples
 identify_measures <- function(data, key = c("measure", "rate")){
 
+  if (!is.vector(data)){
+    if(is.data.frame(data)){
+      data <- names(data)
+    } else{
+      stop("Error! Data must be a dataframe or vector!")
+    }
+  }
+
   list_y <- c()
 
   #check key column in the second dataset
-  for (i in 1:length(names(data))){
-    if (T %in% stringr::str_detect(names(data)[i], key) == TRUE){
+  for (i in 1:length(data)){
+    if (T %in% stringr::str_detect(data[i], key) == TRUE){
       list_y <-
-        union(list_y, names(data)[i])
+        union(list_y, data[i])
 
     }
   }

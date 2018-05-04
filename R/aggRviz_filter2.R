@@ -12,6 +12,8 @@
 #' Option:  if it's not a blank for all categories, set all_symbol
 #' This could be NA, or " " or "all".
 #'
+#' Option:  if you set features, it will only delete columns in that set
+#'
 #'
 #' @param dat data.frame
 #' @param col_2_delete vector
@@ -24,7 +26,7 @@
 #' @export
 #'
 #'
-aggRviz_filter2 <- function(data,col_2_delete = NULL, col_2_keep = NULL, all_symbol = ""){
+aggRviz_filter2 <- function(data,col_2_delete = NULL, col_2_keep = NULL, features = NULL, all_symbol = ""){
   if (!is.data.frame(data)){
     stop("Error: data should be a dataframe!")
   }
@@ -34,10 +36,20 @@ aggRviz_filter2 <- function(data,col_2_delete = NULL, col_2_keep = NULL, all_sym
     stop("Error: enter exactly one of col_2_delete and col_2_keep!")
   }
 
-  ##check that exactly one of col_2_keep and col_2_delete is null
   if (!is.null(col_2_delete) & !is.null(col_2_keep)){
     stop("Error: enter exactly one of col_2_delete and col_2_keep!")
   }
+
+  ### checks for features:
+  col_features <- names(data)
+
+  if (!is.null(features)){
+    if(!is.vector(features)){
+      stop("Error: features needs to be a vector of values")
+    }
+    col_features <- dplyr::setdiff(names(data), features)
+  }
+
 
   ### if we're looking at deleting columns.
   if (is.null(col_2_keep)){
@@ -45,10 +57,10 @@ aggRviz_filter2 <- function(data,col_2_delete = NULL, col_2_keep = NULL, all_sym
       stop("Error! col_2_delete needs to be a vector!")
     }
 
- # if (union(names(data), col_2_delete) != names(dat)){
-  #  stop("col_2_delete contains soemthing that is not a column in the data.frame")
 
-    keepers <- dplyr::setdiff(names(data),col_2_delete)
+    col_2_delete <- dplyr::intersect(col_2_delete, col_features)
+
+    keepers <- dplyr::setdiff(col_features,col_2_delete)
   }
 
 ### if we're looking at keeping columns.
@@ -57,11 +69,9 @@ aggRviz_filter2 <- function(data,col_2_delete = NULL, col_2_keep = NULL, all_sym
       stop("Error! col_2_keep needs to be a vector!")
     }
 
-# if (union(names(data), col_2_delete) != names(dat)){
-#  stop("col_2_delete contains soemthing that is not a column in the data.frame")
 
-  col_2_delete <- dplyr::setdiff(names(data),col_2_keep)
-  keepers <- col_2_keep
+    keepers <- dplyr::intersect(col_2_keep, col_features)
+    col_2_delete <- dplyr::setdiff(col_features, keepers)
   }
 
 
@@ -77,8 +87,6 @@ aggRviz_filter2 <- function(data,col_2_delete = NULL, col_2_keep = NULL, all_sym
 }
 
 
-
-c(5,19) %in% c(5,6,7,8)
 
 
 

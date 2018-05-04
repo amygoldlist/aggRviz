@@ -6,7 +6,7 @@
 EXPERIMENT!!!}
 \usage{
 aggRviz_filter2(data, col_2_delete = NULL, col_2_keep = NULL,
-  all_symbol = "")
+  features = NULL, all_symbol = "")
 }
 \arguments{
 \item{col_2_delete}{vector}
@@ -30,4 +30,6 @@ OPTION:  col_2_keep lets you filter "in"
 
 Option:  if it's not a blank for all categories, set all_symbol
 This could be NA, or " " or "all".
+
+Option:  if you set features, it will only delete columns in that set
 }

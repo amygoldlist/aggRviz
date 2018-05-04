@@ -45,7 +45,7 @@ test_that('aggRviz_filter errors', {
 
   expect_error(aggRviz_filter2(5, c("5")), "Error: data should be a dataframe!")
   expect_error(aggRviz_filter2(c(5,6,7), c("5")), "Error: data should be a dataframe!")
-  expect_error(aggRviz_filter2(df_blanks, c("5")),"Evaluation error: object '5' not found.")
+  expect_error(aggRviz_filter2(df_blanks, c("5")))
   expect_error(aggRviz_filter2(df_blanks, df_noblanks),"Error! col_2_delete needs to be a vector!")
   expect_error(aggRviz_filter2(6, df_noblanks),"Error: data should be a dataframe!")
 

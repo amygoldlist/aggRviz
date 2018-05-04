@@ -1,6 +1,11 @@
 
 
-#' Title
+#' identify_measures
+#'
+#' Enter a data.frame or vector, and this function will return a vector of measures
+#' Optional:  add a vector of names to recognize as measures,
+#' default is c("measure", "rate").
+#' The function uses stringr to detect these regular expressions.
 #'
 #' @param data data.frame or vector
 #' @param key vector
@@ -9,6 +14,9 @@
 #' @export
 #'
 #' @examples
+#' load("example_data/yummy.Rda")
+#' identify_measures(dat_1)
+#'
 identify_measures <- function(data, key = c("measure", "rate")){
 
   if (!is.vector(data)){

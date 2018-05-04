@@ -17,3 +17,6 @@ vector
 \description{
 Title
 }
+\examples{
+
+}

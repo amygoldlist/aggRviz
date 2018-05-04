@@ -15,7 +15,7 @@
 #' @param dat2 data.frame
 #' @param n integer
 #'
-#' @return
+#' @return plot
 #' @export
 #'
 #' @examples

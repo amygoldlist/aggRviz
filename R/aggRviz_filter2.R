@@ -19,6 +19,7 @@
 #' @param col_2_delete vector
 #' @param col_2_keep vector
 #' @param all_symbol character
+#' @param features vector
 #'
 #' @return data.frame
 #' @export

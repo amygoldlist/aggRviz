@@ -22,7 +22,7 @@ The function uses stringr to detect these regular expressions.
 }
 \examples{
 load("../example_data/yummy.Rda")
-names(dat1)
+names(dat_1)
 identify_measures(dat_1)
 
 }

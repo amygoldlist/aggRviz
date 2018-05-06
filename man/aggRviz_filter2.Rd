@@ -15,6 +15,8 @@ aggRviz_filter2(data, col_2_delete = NULL, col_2_keep = NULL,
 
 \item{col_2_keep}{vector}
 
+\item{features}{vector}
+
 \item{all_symbol}{character}
 }
 \value{

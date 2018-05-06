@@ -22,7 +22,7 @@
 #' @return data.frame
 #' @export
 #'@examples
-#' load("example_data/yummy.Rda")
+#' load("../example_data/yummy.Rda")
 #' aggRviz_join(dat_1, dat_2)
 #'
 

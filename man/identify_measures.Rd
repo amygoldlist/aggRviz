@@ -21,7 +21,7 @@ default is c("measure", "rate").
 The function uses stringr to detect these regular expressions.
 }
 \examples{
-load("example_data/yummy.Rda")
+load("../example_data/yummy.Rda")
 names(dat1)
 identify_measures(dat_1)
 

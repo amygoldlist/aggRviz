@@ -31,7 +31,7 @@ THis is a new attempt, building on Fang's work
 The key is a vector of key words that make something important, (and included.)
 }
 \examples{
-load("example_data/yummy.Rda")
+load("../example_data/yummy.Rda")
 aggRviz_join(dat_1, dat_2)
 
 }

@@ -14,7 +14,7 @@
 #' @export
 #'
 #' @examples
-#' load("example_data/yummy.Rda")
+#' load("../example_data/yummy.Rda")
 #' names(dat1)
 #' identify_measures(dat_1)
 #'

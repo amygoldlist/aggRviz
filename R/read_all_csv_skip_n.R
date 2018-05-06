@@ -21,6 +21,7 @@
 #' @export
 #'
 #' @examples
+#'
 read_all_csv_skip_n<- function(path,n=2, pattern = "*.csv") {
 
   skipn <- function(x,y=n) utils::read.csv(x,skip = y)

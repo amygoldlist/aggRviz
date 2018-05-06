@@ -19,3 +19,6 @@ plot
 \description{
 Title
 }
+\examples{
+
+}

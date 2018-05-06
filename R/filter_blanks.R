@@ -10,7 +10,7 @@
 #' @export
 #'
 #' @examples
-#' load("example_data/yummy.Rda")
+#' load("../example_data/yummy.Rda")
 #' dat_2
 #' filter_blanks(dat_2)
 #'

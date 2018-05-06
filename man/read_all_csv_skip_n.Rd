@@ -22,3 +22,6 @@ It return a list of all datasets.
 examples: datalist <- read_all_csv_skip_n(path)
 The first csv is datalist[[1]]
 }
+\examples{
+
+}

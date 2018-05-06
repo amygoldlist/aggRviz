@@ -37,7 +37,7 @@ Option:  if you set features, it will only delete columns in that set
 load("../example_data/yummy.Rda")
 dat_1
 
-aggRviz_filter(data = dat_1,col_2_delete= c("dessert", "fruit"))
+aggRviz_filter2(data = dat_1,col_2_delete= c("Dessert", "Fruit"))
 
 
 }

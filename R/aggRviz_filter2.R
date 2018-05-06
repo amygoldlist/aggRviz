@@ -23,7 +23,7 @@
 #' @return data.frame
 #' @export
 #'
-#' @example
+#' @examples
 #' load("../example_data/yummy.Rda")
 #' dat_1
 #'

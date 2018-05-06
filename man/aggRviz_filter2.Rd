@@ -33,3 +33,11 @@ This could be NA, or " " or "all".
 
 Option:  if you set features, it will only delete columns in that set
 }
+\examples{
+load("../example_data/yummy.Rda")
+dat_1
+
+aggRviz_filter(data = dat_1,col_2_delete= c("dessert", "fruit"))
+
+
+}

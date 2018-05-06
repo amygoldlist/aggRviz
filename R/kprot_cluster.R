@@ -18,7 +18,7 @@
 #' @return plot
 #' @export
 #'
-#' @examples
+#'
 #'
 kprot_cluster <- function(dat1,dat2,n){
   #join two dataset

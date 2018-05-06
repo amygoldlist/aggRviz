@@ -20,7 +20,7 @@
 #' @return list
 #' @export
 #'
-#' @examples
+#'
 #'
 read_all_csv_skip_n<- function(path,n=2, pattern = "*.csv") {
 

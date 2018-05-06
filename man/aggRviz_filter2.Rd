@@ -9,13 +9,13 @@ aggRviz_filter2(data, col_2_delete = NULL, col_2_keep = NULL,
   features = NULL, all_symbol = "")
 }
 \arguments{
+\item{data}{data.frame}
+
 \item{col_2_delete}{vector}
 
 \item{col_2_keep}{vector}
 
 \item{all_symbol}{character}
-
-\item{dat}{data.frame}
 }
 \value{
 data.frame

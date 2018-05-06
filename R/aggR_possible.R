@@ -12,7 +12,7 @@
 #' @export
 #'
 #' @examples
-#' #load("example_data/yummy.Rda")
+#' #load("../example_data/yummy.Rda")
 #' #dat_2
 #'
 #' #aggR_possible(dat_2, c("Colour", "Sweet_or_Salty", "Fruit"))

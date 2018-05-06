@@ -15,6 +15,7 @@
 #'
 #' @examples
 #' load("example_data/yummy.Rda")
+#' names(dat1)
 #' identify_measures(dat_1)
 #'
 identify_measures <- function(data, key = c("measure", "rate")){

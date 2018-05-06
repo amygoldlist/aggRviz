@@ -16,7 +16,7 @@ aggRviz_join(x, y, key = c("measure", "rate"), col_2_ignore = NULL,
 
 \item{col_2_ignore}{vector}
 
-\item{all_symbol}{}
+\item{all_symbol}{character}
 }
 \value{
 data.frame
@@ -31,6 +31,7 @@ THis is a new attempt, building on Fang's work
 The key is a vector of key words that make something important, (and included.)
 }
 \examples{
-
+load("example_data/yummy.Rda")
+aggRviz_join(dat_1, dat_2)
 
 }

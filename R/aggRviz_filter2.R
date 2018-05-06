@@ -18,12 +18,16 @@
 #' @param dat data.frame
 #' @param col_2_delete vector
 #' @param col_2_keep vector
-#' @param all_symbol
-#'
-#'
+#' @param all_symbol character
 #'
 #' @return data.frame
 #' @export
+#'
+#' @example
+#' load("example_data/yummy.Rda")
+#' dat_1
+#'
+#' aggRviz_filter(data = dat_1,col_2_delete= c("dessert", "fruit"))
 #'
 #'
 aggRviz_filter2 <- function(data,col_2_delete = NULL, col_2_keep = NULL, features = NULL, all_symbol = ""){

@@ -4,13 +4,15 @@
 #'Create a filtered dataframe with no blanks
 #'
 #' @param data data.frame
-#' @param all_symbol
+#' @param all_symbol character
 #'
 #' @return data.frame
 #' @export
 #'
 #' @examples
-#'
+#' load("example_data/yummy.Rda")
+#' dat_2
+#' filter_blanks(dat_2)
 #'
 filter_blanks <- function(data, all_symbol = ""){
   ### show data at the most granular level

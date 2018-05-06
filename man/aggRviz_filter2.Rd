@@ -13,7 +13,7 @@ aggRviz_filter2(data, col_2_delete = NULL, col_2_keep = NULL,
 
 \item{col_2_keep}{vector}
 
-\item{all_symbol}{}
+\item{all_symbol}{character}
 
 \item{dat}{data.frame}
 }

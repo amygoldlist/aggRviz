@@ -23,25 +23,25 @@
 kprot_cluster <- function(dat1,dat2,n){
   #join two dataset
   test <- join_set(dat1,dat2)
-
-  if (nrow(test)!=0){
-
-  #k-prototype cluster
-  kp <- clustMixType::kproto(test,n)
-
-  #identify key features
-  key <- c()
-  for (i in 1:length(names(test))){
-    if (T %in% stringr::str_detect(names(test)[i],c("measure","rate")) == T){
-      key = c(key,i)
+  
+  if (nrow(test) >= n){
+    
+    #k-prototype cluster
+    kp <- clustMixType::kproto(test,n)
+    
+    #identify key features
+    key <- c()
+    for (i in 1:length(names(test))){
+      if (T %in% stringr::str_detect(names(test)[i],c("measure","rate")) == T){
+        key = c(key,i)
+      }
     }
-  }
-
-  #plot cluster map
-
-  return(graphics::plot(test[,key], col = kp$cluster))
+    
+    #plot cluster map
+    
+    return(graphics::plot(test[,key], col = kp$cluster))
   }
   else{
-    print("lowest level data set has 0 row")
+    print(paste0("The row number of the lowest level dataset is less than ",n))
   }
 }

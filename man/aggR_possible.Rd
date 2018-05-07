@@ -4,22 +4,31 @@
 \alias{aggR_possible}
 \title{aggR_possible}
 \usage{
-aggR_possible(dat, feature_names = names(dat))
+aggR_possible(data, features = names(data), keep = TRUE, all_symbol = "")
 }
 \arguments{
-\item{dat}{data.frame}
+\item{data}{data.frame}
 
-\item{feature_names}{vector}
+\item{features}{vector}
+
+\item{keep}{logical}
+
+\item{all_symbol}{character}
 }
 \value{
 filter_list list
 }
 \description{
 Checks through a dataframe and a vector of features that can be deleted
+OR KEPT!!!!!
 outputs a list of list
 each sublist contains a set of features that can be filtered out.
 }
 \examples{
+load("../example_data/yummy.Rda")
+dat_2
+
+aggR_possible(dat_2, features =c("Colour", "Sweet_or_Salty", "Fruit"), keep = TRUE)
 
 
 }

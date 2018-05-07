@@ -13,6 +13,9 @@ kprot_cluster(dat1, dat2, n)
 
 \item{n}{integer}
 }
+\value{
+plot
+}
 \description{
 Title
 }

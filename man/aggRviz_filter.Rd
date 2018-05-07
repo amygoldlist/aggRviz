@@ -7,9 +7,9 @@
 aggRviz_filter(data, col_2_delete)
 }
 \arguments{
-\item{col_2_delete}{vector}
+\item{data}{data.frame}
 
-\item{dat}{data.frame}
+\item{col_2_delete}{vector}
 }
 \value{
 data.frame

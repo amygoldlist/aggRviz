@@ -15,15 +15,20 @@
 #' Option:  if you set features, it will only delete columns in that set
 #'
 #'
-#' @param dat data.frame
+#' @param data data.frame
 #' @param col_2_delete vector
 #' @param col_2_keep vector
-#' @param all_symbol
-#'
-#'
+#' @param all_symbol character
+#' @param features vector
 #'
 #' @return data.frame
 #' @export
+#'
+#' @examples
+#' load("../example_data/yummy.Rda")
+#' dat_1
+#'
+#' aggRviz_filter2(data = dat_1,col_2_delete= c("Dessert", "Fruit"))
 #'
 #'
 aggRviz_filter2 <- function(data,col_2_delete = NULL, col_2_keep = NULL, features = NULL, all_symbol = ""){

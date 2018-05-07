@@ -9,13 +9,15 @@ aggRviz_filter2(data, col_2_delete = NULL, col_2_keep = NULL,
   features = NULL, all_symbol = "")
 }
 \arguments{
+\item{data}{data.frame}
+
 \item{col_2_delete}{vector}
 
 \item{col_2_keep}{vector}
 
-\item{all_symbol}{}
+\item{features}{vector}
 
-\item{dat}{data.frame}
+\item{all_symbol}{character}
 }
 \value{
 data.frame
@@ -32,4 +34,12 @@ Option:  if it's not a blank for all categories, set all_symbol
 This could be NA, or " " or "all".
 
 Option:  if you set features, it will only delete columns in that set
+}
+\examples{
+load("../example_data/yummy.Rda")
+dat_1
+
+aggRviz_filter2(data = dat_1,col_2_delete= c("Dessert", "Fruit"))
+
+
 }

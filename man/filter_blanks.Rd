@@ -9,7 +9,7 @@ filter_blanks(data, all_symbol = "")
 \arguments{
 \item{data}{data.frame}
 
-\item{all_symbol}{}
+\item{all_symbol}{character}
 }
 \value{
 data.frame
@@ -18,6 +18,8 @@ data.frame
 Create a filtered dataframe with no blanks
 }
 \examples{
-
+load("../example_data/yummy.Rda")
+dat_2
+filter_blanks(dat_2)
 
 }

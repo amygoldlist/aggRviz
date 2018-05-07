@@ -15,10 +15,11 @@
 #' @param dat2 data.frame
 #' @param n integer
 #'
-#' @return
+#' @return plot
 #' @export
 #'
-#' @examples
+#'
+#'
 kprot_cluster <- function(dat1,dat2,n){
   #join two dataset
   test <- join_set(dat1,dat2)

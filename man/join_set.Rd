@@ -18,7 +18,3 @@ data.frame
 This function will pick key column (such as "interesting rate" or proportion rate)
 and join two lowest datasets by common columns.
 }
-\examples{
-
-
-}

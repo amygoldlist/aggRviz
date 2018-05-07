@@ -7,7 +7,7 @@
 #' and filters out any unstratified rows from the other features.
 #'
 #'
-#' @param dat data.frame
+#' @param data data.frame
 #' @param col_2_delete vector
 #'
 #'

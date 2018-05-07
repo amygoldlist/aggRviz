@@ -17,12 +17,13 @@
 #' @param y data.frame
 #' @param key vector
 #' @param col_2_ignore vector
-#' @param all_symbol
+#' @param all_symbol character
 #'
 #' @return data.frame
 #' @export
 #'@examples
-#'
+#' load("../example_data/yummy.Rda")
+#' aggRviz_join(dat_1, dat_2)
 #'
 
 aggRviz_join <- function(x,y, key = c("measure","rate"), col_2_ignore = NULL, all_symbol = ""){

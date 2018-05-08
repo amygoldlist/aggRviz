@@ -31,16 +31,21 @@ d1 <- dat_1 %>%
   dplyr::select(-Fruit) %>%
   dplyr::select(Dessert, dplyr::everything())
 
+d1_rev <- dplyr::select(d1, Colour, dplyr::everything())
+
 #aggRviz_filter2(dat_1, col_2_keep = c("Dessert", "Colour", "measure_1")) == d1
 
 
 test_that("aggRviz_filter2 on yummy data", {
-  expect_equivalent(aggRviz_filter2(dat_1, col_2_keep = c("Dessert", "Colour", "measure_1")), d1)
-  expect_equivalent(aggRviz_filter2(dat_1, col_2_delete=c("Fruit")), dplyr::select(d1, Colour, dplyr::everything()))
-  expect_equivalent(aggRviz_filter2(dat_1, col_2_keep =c("Dessert", "Colour"), features = c("Dessert", "Colour", "Age")), d1)
+  expect_equivalent(aggRviz_filter2(dat_1, col_2_keep = c("Dessert", "Colour", "measure_1")), d1_rev )
+  expect_equivalent(aggRviz_filter2(dat_1, col_2_delete=c("Fruit")), d1_rev)
   expect_equivalent(aggRviz_filter2(dat_1, col_2_keep =c("Dessert", "Colour"),
-                               features = c("Dessert", "Colour", "Age", "Sweet_or_Salty")),d1)
-
+                                    features = c("Dessert", "Colour", "Fruit")), d1_rev)
+  expect_equivalent(aggRviz_filter2(dat_1, col_2_keep =c("Dessert", "Colour"),
+                               features = c("Dessert", "Colour", "Fruit", "Sweet_or_Salty")),d1_rev)
+  expect_equivalent(aggRviz_filter2(dat_1, col_2_delete =c("Fruit"), features = c("Dessert", "Colour", "Fruit")), d1_rev)
+  expect_equivalent(aggRviz_filter2(dat_1, col_2_delete =c("Fruit"),
+                                    features = c("Dessert", "Colour", "Fruit", "Sweet_or_Salty")), d1_rev)
 })
 
 test_that('aggRviz_filter2 basic functionality', {

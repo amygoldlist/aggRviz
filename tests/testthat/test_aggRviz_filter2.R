@@ -1,6 +1,6 @@
 
 context("Basic functionality tests")
-
+load("testdata/yummy.Rda")
 
 df_noblanks <- data.frame(
   g1 = c(1, 1, 2, 2, 2),
@@ -24,7 +24,29 @@ df_blanks_filtered <- data.frame(
 
 df_empty <- dplyr::select(dplyr::filter(df_blanks,g1 == "aggRviz"),b, g2)
 
+#d1 <- data.frame(Dessert = c("cake", "pie"), Colour = c("blue", "red"), measure_1 = c(0.1542357, 0.08528007))
 
+d1 <- dat_1 %>%
+  dplyr::filter(Fruit =="" & Colour != "" & Dessert != "") %>%
+  dplyr::select(-Fruit) %>%
+  dplyr::select(Dessert, dplyr::everything())
+
+d1_rev <- dplyr::select(d1, Colour, dplyr::everything())
+
+#aggRviz_filter2(dat_1, col_2_keep = c("Dessert", "Colour", "measure_1")) == d1
+
+
+test_that("aggRviz_filter2 on yummy data", {
+  expect_equivalent(aggRviz_filter2(dat_1, col_2_keep = c("Dessert", "Colour", "measure_1")), d1_rev )
+  expect_equivalent(aggRviz_filter2(dat_1, col_2_delete=c("Fruit")), d1_rev)
+  expect_equivalent(aggRviz_filter2(dat_1, col_2_keep =c("Dessert", "Colour"),
+                                    features = c("Dessert", "Colour", "Fruit")), d1_rev)
+  expect_equivalent(aggRviz_filter2(dat_1, col_2_keep =c("Dessert", "Colour"),
+                               features = c("Dessert", "Colour", "Fruit", "Sweet_or_Salty")),d1_rev)
+  expect_equivalent(aggRviz_filter2(dat_1, col_2_delete =c("Fruit"), features = c("Dessert", "Colour", "Fruit")), d1_rev)
+  expect_equivalent(aggRviz_filter2(dat_1, col_2_delete =c("Fruit"),
+                                    features = c("Dessert", "Colour", "Fruit", "Sweet_or_Salty")), d1_rev)
+})
 
 test_that('aggRviz_filter2 basic functionality', {
 
@@ -54,4 +76,6 @@ test_that('aggRviz_filter errors', {
   expect_error(aggRviz_filter2(df_blanks),
                "Error: enter exactly one of col_2_delete and col_2_keep!")
 })
+
+
 

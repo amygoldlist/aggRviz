@@ -46,13 +46,15 @@ aggRviz_filter2 <- function(data,col_2_delete = NULL, col_2_keep = NULL, feature
   }
 
   ### checks for features:
+
+  ##set col_features to be EVERYTHING
   col_features <- names(data)
 
   if (!is.null(features)){
     if(!is.vector(features)){
       stop("Error: features needs to be a vector of values")
     }
-    col_features <- dplyr::setdiff(names(data), features)
+    col_features <- dplyr::intersect(names(data), features)
   }
 
 
@@ -61,7 +63,6 @@ aggRviz_filter2 <- function(data,col_2_delete = NULL, col_2_keep = NULL, feature
     if (!is.vector(col_2_delete)){
       stop("Error! col_2_delete needs to be a vector!")
     }
-
 
     col_2_delete <- dplyr::intersect(col_2_delete, col_features)
 
@@ -84,15 +85,19 @@ aggRviz_filter2 <- function(data,col_2_delete = NULL, col_2_keep = NULL, feature
     ## all_vars gets rid of all that have at least one, any gets rid of both
     dplyr::filter_at(col_2_delete, dplyr::all_vars(. == all_symbol)) %>%
     ### select only the good stuff
-    dplyr::select(dplyr::one_of(keepers))
+    dplyr::select(-dplyr::one_of(col_2_delete))
     ### kill all the blanks!!
   dat <- filter_blanks(dat, all_symbol)
+  dat <- droplevels(dat)
 
   return(dat)
 }
 
 
 
+#dat <- data %>%
+ # dplyr::filter_at(col_2_delete, dplyr::all_vars(. == all_symbol)) %>%
+  # dplyr::select(-dplyr::one_of(col_2_delete))
 
 
 

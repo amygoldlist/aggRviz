@@ -23,6 +23,8 @@ Checks through a dataframe and a vector of features that can be deleted
 OR KEPT!!!!!
 outputs a list of list
 each sublist contains a set of features that can be filtered out.
+To filter by keeping, set keep = TRUE (default)
+To filter by columns to filter out, set keep = FALSE
 }
 \examples{
 load("../example_data/yummy.Rda")

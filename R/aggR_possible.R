@@ -5,6 +5,8 @@
 #' OR KEPT!!!!!
 #' outputs a list of list
 #' each sublist contains a set of features that can be filtered out.
+#' To filter by keeping, set keep = TRUE (default)
+#' To filter by columns to filter out, set keep = FALSE
 #'
 #' @param data data.frame
 #' @param features vector
@@ -39,7 +41,7 @@ aggR_possible <- function(data, features = names(data), keep = TRUE, all_symbol 
   filter_list <- list()
   counter <- 1
   ##
-  feature_names = dplyr::intersect(features, names(data))
+  feature_names <-  dplyr::intersect(features, names(data))
 
   for (i in 1:length(feature_names)){
     feat_groups <- utils::combn(feature_names,i, simplify = FALSE)
@@ -50,8 +52,8 @@ aggR_possible <- function(data, features = names(data), keep = TRUE, all_symbol 
       if (!keep){
         df <- aggRviz_filter2(data, col_2_delete = feature, features = feature_names, all_symbol = "")
       }
-      else if (keep){
-        df <- aggRviz_filter2(data, col_2_keep = feature,features = feature_names, all_symbol = "")
+      if (keep){
+        df <- aggRviz_filter2(data, col_2_keep = feature, features = feature_names, all_symbol = "")
       }
 
       if (nrow(df)>0) {

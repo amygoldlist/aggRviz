@@ -67,9 +67,7 @@ aggR_possible <- function(data, features = names(data), keep = TRUE, all_symbol 
     }
   }
 
-  if (keep){
-    filter_list[[counter]] <- features
-  }
+
 
   return(filter_list)
 }

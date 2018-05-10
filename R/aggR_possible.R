@@ -43,7 +43,7 @@ aggR_possible <- function(data, features = names(data), keep = TRUE, all_symbol 
   ##
   feature_names <-  dplyr::intersect(features, names(data))
 
-  if (length(feature_names ==0)){
+  if (length(feature_names) == 0){
     feature_names <- names(data)
   }
 

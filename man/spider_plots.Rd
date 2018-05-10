@@ -4,14 +4,14 @@
 \alias{spider_plots}
 \title{spider plots}
 \usage{
-spider_plots(good_data, feature, time)
+spider_plots(good_data, feature, Time)
 }
 \arguments{
 \item{good_data}{path}
 
 \item{feature}{vector}
 
-\item{time}{time}
+\item{Time}{time}
 }
 \value{
 plot

@@ -19,13 +19,13 @@
 #'
 #' @param good_data path
 #' @param feature vector
-#' @param time time
+#' @param Time time
 #'
 #' @return plot
 #' @export
 #'
 #' @examples
-spider_plots <- function(good_data, feature, time) {
+spider_plots <- function(good_data, feature, Time) {
 
 
 

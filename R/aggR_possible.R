@@ -20,7 +20,7 @@
 #' load("../example_data/yummy.Rda")
 #' dat_2
 #'
-#' #aggR_possible(dat_2, features =c("Colour", "Sweet_or_Salty", "Fruit"), keep = TRUE)
+#' aggR_possible(dat_2, features =c("Colour", "Sweet_or_Salty", "Fruit"), keep = TRUE)
 #'
 #'
 aggR_possible <- function(data, features = names(data), keep = TRUE, all_symbol = ""){
@@ -47,7 +47,7 @@ aggR_possible <- function(data, features = names(data), keep = TRUE, all_symbol 
     feature_names <- names(data)
   }
 
-  for (i in 1:length(feature_names)-1){
+  for (i in 1:(length(feature_names)-1)){
     feat_groups <- utils::combn(feature_names,i, simplify = FALSE)
     #print(length(feat_groups))
     for (j in 1:length(feat_groups)){
@@ -70,7 +70,6 @@ aggR_possible <- function(data, features = names(data), keep = TRUE, all_symbol 
       }
     }
   }
-
 
 
   return(filter_list)

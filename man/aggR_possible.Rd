@@ -30,7 +30,7 @@ To filter by columns to filter out, set keep = FALSE
 load("../example_data/yummy.Rda")
 dat_2
 
-#aggR_possible(dat_2, features =c("Colour", "Sweet_or_Salty", "Fruit"), keep = TRUE)
+aggR_possible(dat_2, features =c("Colour", "Sweet_or_Salty", "Fruit"), keep = TRUE)
 
 
 }

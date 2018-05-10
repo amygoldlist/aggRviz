@@ -1,7 +1,16 @@
+#' Title
+#'
+#' @param clean_dataset_path
+#'
+#' @return data.frame
+#' @export
+#'
+#' @examples
+#'
 get_measures <- function(clean_dataset_path){
   full_dataset <- read.csv(clean_dataset_path)
-  
-  good_data <- full_dataset %>% 
+
+  good_data <- full_dataset %>%
     # filter(Trend.quality1=="Green",
     #        Trend.quality2=="Green",
     #        Trend.quality3=="Green",
@@ -10,9 +19,9 @@ get_measures <- function(clean_dataset_path){
     #        Trend.quality6=="Green",
     #        Trend.quality7=="Green",
     #        Trend.quality8=="Green",
-    #        Trend.quality9=="Green",) %>% 
+    #        Trend.quality9=="Green",) %>%
     dplyr::select(Age,
-                  Job.Function..EEOC., 
+                  Job.Function..EEOC.,
                   People.manager,
                   Performance.group,
                   Industry,
@@ -30,7 +39,7 @@ get_measures <- function(clean_dataset_path){
                   managers_ratio_measure,
                   wfa_eeoc_minority_ratio_measure,
                   wfa_promotion_received_rate,
-                  wfa_retention_turnover_resignation_n_rate) %>% 
-    na.omit()
+                  wfa_retention_turnover_resignation_n_rate) %>%
+    stats::na.omit()
   return(good_data)
 }

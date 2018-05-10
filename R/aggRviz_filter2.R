@@ -87,7 +87,7 @@ aggRviz_filter2 <- function(data,col_2_delete = NULL, col_2_keep = NULL, feature
     ### select only the good stuff
     dplyr::select(-dplyr::one_of(col_2_delete))
     ### kill all the blanks!!
-  dat <- filter_blanks(dat, all_symbol)
+  dat <- filter_blanks(dat, features, all_symbol)
   dat <- droplevels(dat)
 
   return(dat)

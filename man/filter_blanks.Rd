@@ -4,10 +4,12 @@
 \alias{filter_blanks}
 \title{Filter aggregated data to the most granular level}
 \usage{
-filter_blanks(data, all_symbol = "")
+filter_blanks(data, features = NULL, all_symbol = "")
 }
 \arguments{
 \item{data}{data.frame}
+
+\item{features}{vector}
 
 \item{all_symbol}{character}
 }
@@ -16,6 +18,7 @@ data.frame
 }
 \description{
 Create a filtered dataframe with no blanks
+Only on the features!!
 }
 \examples{
 load("../example_data/yummy.Rda")

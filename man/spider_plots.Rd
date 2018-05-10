@@ -11,7 +11,7 @@ spider_plots(good_data, feature, Time)
 
 \item{feature}{vector}
 
-\item{Time}{time}
+\item{Time}{character}
 }
 \value{
 plot

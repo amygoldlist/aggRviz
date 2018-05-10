@@ -20,7 +20,7 @@
 #' load("../example_data/yummy.Rda")
 #' dat_2
 #'
-#' aggR_possible(dat_2, features =c("Colour", "Sweet_or_Salty", "Fruit"), keep = TRUE)
+#' #aggR_possible(dat_2, features =c("Colour", "Sweet_or_Salty", "Fruit"), keep = TRUE)
 #'
 #'
 aggR_possible <- function(data, features = names(data), keep = TRUE, all_symbol = ""){
@@ -42,6 +42,10 @@ aggR_possible <- function(data, features = names(data), keep = TRUE, all_symbol 
   counter <- 1
   ##
   feature_names <-  dplyr::intersect(features, names(data))
+
+  if (length(feature_names ==0)){
+    feature_names <- names(data)
+  }
 
   for (i in 1:length(feature_names)-1){
     feat_groups <- utils::combn(feature_names,i, simplify = FALSE)

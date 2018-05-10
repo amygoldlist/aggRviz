@@ -19,7 +19,7 @@
 #'
 #' @param good_data path
 #' @param feature vector
-#' @param Time time
+#' @param Time character
 #'
 #' @return plot
 #' @export

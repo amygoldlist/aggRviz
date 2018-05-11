@@ -43,7 +43,11 @@ aggR_possible <- function(data, features = names(data), keep = TRUE, all_symbol 
   ##
   feature_names <-  dplyr::intersect(features, names(data))
 
-  for (i in 1:length(feature_names)-1){
+  if (length(feature_names) == 0){
+    feature_names <- names(data)
+  }
+
+  for (i in 1:(length(feature_names)-1)){
     feat_groups <- utils::combn(feature_names,i, simplify = FALSE)
     #print(length(feat_groups))
     for (j in 1:length(feat_groups)){
@@ -66,7 +70,6 @@ aggR_possible <- function(data, features = names(data), keep = TRUE, all_symbol 
       }
     }
   }
-
 
 
   return(filter_list)

@@ -80,6 +80,15 @@ aggRviz_filter2 <- function(data,col_2_delete = NULL, col_2_keep = NULL, feature
     col_2_delete <- dplyr::setdiff(col_features, keepers)
   }
 
+  ###########  Filtering out all features!
+  if(length(keepers)== 0){
+    dat <- data %>%
+      dplyr::filter_at(col_features, dplyr::all_vars(. == "")) %>%
+      dplyr::select(-dplyr::one_of(col_features)) #%>%
+      #na.omit(.)
+    return(dat)
+  }
+
 
   dat <- data %>%
     ## all_vars gets rid of all that have at least one, any gets rid of both

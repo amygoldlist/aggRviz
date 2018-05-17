@@ -78,4 +78,12 @@ test_that('aggRviz_filter errors', {
 })
 
 
+test_that('aggRviz_filter2 filtering it all!', {
+  df <- dat_1 %>% select(-Colour)
+  df2 <- df %>%
+    filter(Dessert == "" & Fruit == "") %>%
+    select(measure_1)
+  expect_equivalent(aggRviz_filter2(data = df,col_2_delete = c("Dessert", "Fruit"), features = c("Dessert", "Colour", "Fruit")),
+  df2)
 
+})

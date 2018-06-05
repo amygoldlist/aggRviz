@@ -31,7 +31,7 @@
 #' aggRviz_filter2(data = dat_1,col_2_delete= c("Dessert", "Fruit"))
 #'
 #'
-aggRviz_filter2 <- function(data,col_2_delete = NULL, col_2_keep = NULL, features = NULL, all_symbol = ""){
+aggRviz_filter2 <- function(data,col_2_delete = NULL, col_2_keep = NULL, features = NULL, all_symbol = "", fix_places = TRUE){
   if (!is.data.frame(data)){
     stop("Error: data should be a dataframe!")
   }
@@ -80,8 +80,32 @@ aggRviz_filter2 <- function(data,col_2_delete = NULL, col_2_keep = NULL, feature
     col_2_delete <- dplyr::setdiff(col_features, keepers)
   }
 
+  dat <- data
 
-  dat <- data %>%
+  #### fix the placenames (project specific for now)
+  if ("Region" %in% keepers){
+    if ("Country" %in% names(dat)){
+      dat <- dat %>%
+        ## make sure country and Region agree
+        dplyr::filter((Country == "" & Region == "") | (Country != "" & Region != "")) %>%
+        dplyr::select(-Country)
+    }
+  }
+  if ("State.or.Province" %in% keepers){
+    dat <- dat %>%
+      ## make sure region and province agree
+      dplyr::filter((State.or.Province == "" & Region == "") | (State.or.Province != "" & Region != "")) %>%
+      dplyr::select(-Region)
+  }
+
+  #### get col_2_delete cleaner:
+
+  col_2_delete <- dplyr::intersect(names(dat), col_2_delete)
+
+
+  #####################
+
+  dat <- dat %>%
     ## all_vars gets rid of all that have at least one, any gets rid of both
     dplyr::filter_at(col_2_delete, dplyr::all_vars(. == all_symbol)) %>%
     ### select only the good stuff

@@ -6,7 +6,7 @@
 EXPERIMENT!!!}
 \usage{
 aggRviz_filter2(data, col_2_delete = NULL, col_2_keep = NULL,
-  features = NULL, all_symbol = "")
+  features = NULL, all_symbol = "", fix_place = TRUE)
 }
 \arguments{
 \item{data}{data.frame}

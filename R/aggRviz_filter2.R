@@ -20,6 +20,7 @@
 #' @param col_2_keep vector
 #' @param all_symbol character
 #' @param features vector
+#' @param fix_place logical
 #'
 #' @return data.frame
 #' @export

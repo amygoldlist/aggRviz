@@ -18,6 +18,8 @@ aggRviz_filter2(data, col_2_delete = NULL, col_2_keep = NULL,
 \item{features}{vector}
 
 \item{all_symbol}{character}
+
+\item{fix_place}{logical}
 }
 \value{
 data.frame

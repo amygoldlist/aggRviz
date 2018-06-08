@@ -4,7 +4,7 @@
 \alias{kprot_cluster}
 \title{Title}
 \usage{
-kprot_cluster(dat1, dat2, n)
+kprot_cluster(dat1, dat2, n = NULL)
 }
 \arguments{
 \item{dat1}{data.frame}

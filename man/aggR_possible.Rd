@@ -4,10 +4,13 @@
 \alias{aggR_possible}
 \title{aggR_possible}
 \usage{
-aggR_possible(data, features = names(data), keep = TRUE, all_symbol = "")
+aggR_possible(data, number = NULL, features = names(data), keep = TRUE,
+  all_symbol = "")
 }
 \arguments{
 \item{data}{data.frame}
+
+\item{number}{integer}
 
 \item{features}{vector}
 

@@ -15,6 +15,3 @@ data.frame
 \description{
 Title
 }
-\examples{
-
-}

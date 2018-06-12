@@ -7,6 +7,9 @@
 #' @importFrom clustMixType kproto
 #' @importFrom graphics plot
 #' @importFrom utils read.csv
+#' @importFrom stats aggregate
+#' @importFrom stats na.omit
+#' @importFrom stats aggregate
 #'
 #' @import dplyr
 #' @import stringr

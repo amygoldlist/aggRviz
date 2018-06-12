@@ -13,7 +13,7 @@
 #'
 #'
 #' @return data.frame
-#' @export
+#'
 #'
 #'
 aggRviz_filter <- function(data,col_2_delete){

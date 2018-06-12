@@ -3,9 +3,9 @@
 #' @param clean_dataset_path
 #'
 #' @return data.frame
-#' @export
 #'
-#' @examples
+#'
+#'
 #'
 get_measures <- function(clean_dataset_path){
   full_dataset <- read.csv(clean_dataset_path)

@@ -22,9 +22,9 @@
 #' @param Time character
 #'
 #' @return plot
-#' @export
 #'
-#' @examples
+#'
+#'
 spider_plots <- function(good_data, feature, Time) {
 
 

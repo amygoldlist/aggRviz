@@ -7,6 +7,10 @@ df_noblanks <- data.frame(
   b = c("q","w","e","r","t")
 )
 
+df_no1 <- df_noblanks %>%
+  filter(g1 != 1) %>%
+  filter(g2 !=1)
+
 df_blanks <- data.frame(
   g1 = c("1", "", "2", "2", "2"),
   g2 = c("1", "2", "1", "2", "1"),
@@ -29,6 +33,10 @@ test_that('filter_blanks basic functionality', {
   expect_is(filter_blanks(df_blanks),'data.frame')
   expect_equal(filter_blanks(df_noblanks), df_noblanks)
   expect_equivalent(filter_blanks(df_blanks), df_blanks_filtered)
+  ### key =1
+  expect_equal(filter_blanks(df_noblanks, all_symbol = 1), df_no1)
+  ##check features
+  expect_equal(filter_blanks(df_blanks, features = c("a", "g2")), df_blanks)
   expect_error(filter_blanks(5), "data should be a dataframe!")
   expect_error(filter_blanks(c(4,65)), "Error: data should be a dataframe!")
   })

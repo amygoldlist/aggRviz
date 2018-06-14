@@ -2,16 +2,12 @@ context("Testing aggR_possible")
 
 load("testdata/yummy.Rda")
 
-##
 
-
-
-#skip("skip")
 
 sample <- aggR_possible(data = dat_2, features = c("Colour", "Dessert","Fruit", "Sweet_or_Salty"))
 sample_n <- aggR_possible(data = dat_2, number = 2, features = c("Colour", "Dessert","Fruit", "Sweet_or_Salty"))
 
-####
+
 test_that('aggR_possible basic functionality',{
 
   expect_equal(is.list(sample), TRUE)

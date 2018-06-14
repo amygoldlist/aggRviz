@@ -18,7 +18,9 @@ data.frame
 }
 \description{
 Create a filtered dataframe with no blanks
-Only on the features!!
+If you want to only look at certain column (ie, allow blanks in other columns), specify these as features.
+If you want to filter out something besides blanks, use the variable all_symbol.
+So setting all_symbol = "chocolate" filters out any row containing chocolate in the features columns
 }
 \examples{
 load("../example_data/yummy.Rda")

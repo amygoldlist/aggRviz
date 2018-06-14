@@ -28,12 +28,16 @@ outputs a list of list
 each sublist contains a set of features that can be filtered out.
 To filter by keeping, set keep = TRUE (default)
 To filter by columns to filter out, set keep = FALSE
+if you want to ignore certain columns, use the features setting.
+If you do, the function will ONLY consider these columns, ignoring the others.
+If you only want to look at combinations of a certain length, use number.  Otherwise, leave it as null
 }
 \examples{
 load("../example_data/yummy.Rda")
 dat_2
 
 aggR_possible(dat_2, features =c("Colour", "Sweet_or_Salty", "Fruit"), keep = TRUE)
+aggR_possible(dat_2, features =c("Colour", "Sweet_or_Salty", "Fruit"), number = 2, keep = TRUE)
 
 
 }

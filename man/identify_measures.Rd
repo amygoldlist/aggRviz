@@ -16,7 +16,7 @@ vector
 }
 \description{
 Enter a data.frame or vector, and this function will return a vector of measures
-Optional:  add a vector of names to recognize as measures,
+A measure is defined as a column name (or item in a vector) that contains a key word.
 default is c("measure", "rate").
 The function uses stringr to detect these regular expressions.
 }
@@ -24,5 +24,8 @@ The function uses stringr to detect these regular expressions.
 load("../example_data/yummy.Rda")
 names(dat_1)
 identify_measures(dat_1)
+
+names_to_check <- c("condition", "odds_ratio", "blood_type", "percent_ratio" )
+identify_measures(names_to_check, key = "ratio")
 
 }

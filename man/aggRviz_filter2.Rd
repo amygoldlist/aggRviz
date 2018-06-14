@@ -2,11 +2,11 @@
 % Please edit documentation in R/aggRviz_filter2.R
 \name{aggRviz_filter2}
 \alias{aggRviz_filter2}
-\title{Filter aggregated data to a chosen level
-EXPERIMENT!!!}
+\title{Filter aggregated data to a chosen level}
 \usage{
 aggRviz_filter2(data, col_2_delete = NULL, col_2_keep = NULL,
-  features = NULL, all_symbol = "", fix_place = TRUE)
+  features = NULL, all_symbol = "", fix_place = TRUE,
+  places = c("State.or.Province", "Region", "Country"))
 }
 \arguments{
 \item{data}{data.frame}
@@ -20,6 +20,8 @@ aggRviz_filter2(data, col_2_delete = NULL, col_2_keep = NULL,
 \item{all_symbol}{character}
 
 \item{fix_place}{logical}
+
+\item{places}{vector}
 }
 \value{
 data.frame
@@ -38,9 +40,9 @@ This could be NA, or " " or "all".
 Option:  if you set features, it will only delete columns in that set
 
 Option:  fix_place allows you to deal with nested places, that is State.or.Province is in Region is in Country.  For now, these are the 3 fixed places:
-State.or.Province $\subset$ Region $\subset$ Country
+places[1] subset places[2] subset places[3]
 
-In future release, this will be a variable!
+In future release, this will be a variable number of places!  but for now it only works with 3 (ordered) places
 }
 \examples{
 load("../example_data/yummy.Rda")

@@ -1,7 +1,6 @@
 
 
 #' Filter aggregated data to a chosen level
-#' EXPERIMENT!!!
 #'
 #' The columns to delete are the features that you DO NOT want to stratify by.
 #' This function filters out any row, stratified by those columns,
@@ -15,9 +14,9 @@
 #' Option:  if you set features, it will only delete columns in that set
 #'
 #' Option:  fix_place allows you to deal with nested places, that is State.or.Province is in Region is in Country.  For now, these are the 3 fixed places:
-#' State.or.Province $\subset$ Region $\subset$ Country
+#' places[1] subset places[2] subset places[3]
 #'
-#' In future release, this will be a variable!
+#' In future release, this will be a variable number of places!  but for now it only works with 3 (ordered) places
 #'
 #'
 #' @param data data.frame
@@ -26,6 +25,7 @@
 #' @param all_symbol character
 #' @param features vector
 #' @param fix_place logical
+#' @param places vector
 #'
 #' @return data.frame
 #' @export
@@ -37,7 +37,7 @@
 #' aggRviz_filter2(data = dat_1,col_2_delete= c("Dessert", "Fruit"))
 #'
 #'
-aggRviz_filter2 <- function(data,col_2_delete = NULL, col_2_keep = NULL, features = NULL, all_symbol = "", fix_place = TRUE){
+aggRviz_filter2 <- function(data,col_2_delete = NULL, col_2_keep = NULL, features = NULL, all_symbol = "", fix_place = TRUE, places = c("State.or.Province", "Region", "Country")){
   if (!is.data.frame(data)){
     stop("Error: data should be a dataframe!")
   }
@@ -96,20 +96,32 @@ aggRviz_filter2 <- function(data,col_2_delete = NULL, col_2_keep = NULL, feature
   ## clean up the places, to the lowest level:
 
   if (fix_place){
-    places <- names(dat) %>%
-      dplyr::intersect(c("State.or.Province", "Region", "Country"))
 
-    if ("State.or.Province" %in% keepers){
-      if ("Region" %in% places & "Region" %in% col_2_delete ){
+    if (length(places)!=3){
+      stop("This works with only 3 names")
+    }
+
+    State.or.Province <- places[1]
+    Region <- places[2]
+    Country <- places[3]
+
+    places <- names(dat) %>%
+      #dplyr::intersect(c("State.or.Province", "Region", "Country"))
+      dplyr::intersect(places)
+
+
+
+    if (State.or.Province %in% keepers){
+      if (Region %in% places & Region %in% col_2_delete ){
         dat <- dat %>%
           dplyr::select(-Region)
       }
-      if ("Country" %in% places & "Country" %in% col_2_delete ){
+      if (Country %in% places & Country %in% col_2_delete ){
         dat <- dat %>%
           dplyr::select(-Country)
       }
-    } else if ("Region" %in% keepers){
-      if ("Country" %in% places & "Country" %in% col_2_delete ){
+    } else if (Region %in% keepers){
+      if (Country %in% places & "Country" %in% col_2_delete ){
         dat <- dat %>%
           dplyr::select(-Country)
       }

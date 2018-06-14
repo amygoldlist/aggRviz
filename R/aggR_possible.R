@@ -7,6 +7,9 @@
 #' each sublist contains a set of features that can be filtered out.
 #' To filter by keeping, set keep = TRUE (default)
 #' To filter by columns to filter out, set keep = FALSE
+#' if you want to ignore certain columns, use the features setting.
+#' If you do, the function will ONLY consider these columns, ignoring the others.
+#' If you only want to look at combinations of a certain length, use number.  Otherwise, leave it as null
 #'
 #' @param data data.frame
 #' @param number integer
@@ -22,12 +25,13 @@
 #' dat_2
 #'
 #' aggR_possible(dat_2, features =c("Colour", "Sweet_or_Salty", "Fruit"), keep = TRUE)
+#' aggR_possible(dat_2, features =c("Colour", "Sweet_or_Salty", "Fruit"), number = 2, keep = TRUE)
 #'
 #'
 aggR_possible <- function(data,
                           number = NULL,
                           features = names(data), keep = TRUE, all_symbol = ""){
-  ### ADD ERRORS!!!
+  ### Errors
   if (!is.data.frame(data)){
     stop("Error: data should be a dataframe!")
   }
@@ -51,14 +55,13 @@ aggR_possible <- function(data,
   }
 
 
-
+## If no number is selected:
   if(is.null(number)){
     for (i in 1:(length(feature_names)-1)){
       feat_groups <- utils::combn(feature_names,i, simplify = FALSE)
-      #print(length(feat_groups))
       for (j in 1:length(feat_groups)){
         feature <- feat_groups[[j]]
-        #print(feature)
+
         if (!keep){
           df <- aggRviz_filter2(data, col_2_delete = feature, features = feature_names, all_symbol = "")
         }
@@ -69,15 +72,13 @@ aggR_possible <- function(data,
         if (nrow(df)>0) {
           filter_list[[counter]] <- feature
           counter <- counter+1
-          #print(counter)
-          #print("Subtract features:")
-          #print(feature)
-          #print(glue("has length: {nrow(df)}"))
+
         }
       }
     }
   } else {
 
+    ## Errors for nonnumeric number
     if (!is.numeric(number)){
       stop("Error: number should be numeric or NULL")
     }
@@ -93,7 +94,6 @@ aggR_possible <- function(data,
     #print(length(feat_groups))
     for (j in 1:length(feat_groups)){
       feature <- feat_groups[[j]]
-      #print(feature)
       if (!keep){
         df <- aggRviz_filter2(data, col_2_delete = feature, features = feature_names, all_symbol = "")
       }
@@ -104,10 +104,7 @@ aggR_possible <- function(data,
       if (nrow(df)>0) {
         filter_list[[counter]] <- feature
         counter <- counter+1
-        #print(counter)
-        #print("Subtract features:")
-        #print(feature)
-        #print(glue("has length: {nrow(df)}"))
+
       }
 
     }

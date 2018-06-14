@@ -14,6 +14,11 @@
 #'
 #' Option:  if you set features, it will only delete columns in that set
 #'
+#' Option:  fix_place allows you to deal with nested places, that is State.or.Province is in Region is in Country.  For now, these are the 3 fixed places:
+#' State.or.Province $\subset$ Region $\subset$ Country
+#'
+#' In future release, this will be a variable!
+#'
 #'
 #' @param data data.frame
 #' @param col_2_delete vector

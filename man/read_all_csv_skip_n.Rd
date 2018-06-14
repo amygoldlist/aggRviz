@@ -21,4 +21,5 @@ This function is used to read all csv in a folder
 It return a list of all datasets.
 examples: datalist <- read_all_csv_skip_n(path)
 The first csv is datalist[[1]]
+To generalize to other files, use pattern = "*.md", ect.
 }

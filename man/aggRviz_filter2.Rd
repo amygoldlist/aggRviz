@@ -36,6 +36,11 @@ Option:  if it's not a blank for all categories, set all_symbol
 This could be NA, or " " or "all".
 
 Option:  if you set features, it will only delete columns in that set
+
+Option:  fix_place allows you to deal with nested places, that is State.or.Province is in Region is in Country.  For now, these are the 3 fixed places:
+State.or.Province $\subset$ Region $\subset$ Country
+
+In future release, this will be a variable!
 }
 \examples{
 load("../example_data/yummy.Rda")

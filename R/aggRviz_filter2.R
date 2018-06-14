@@ -1,7 +1,6 @@
 
 
 #' Filter aggregated data to a chosen level
-#' EXPERIMENT!!!
 #'
 #' The columns to delete are the features that you DO NOT want to stratify by.
 #' This function filters out any row, stratified by those columns,
@@ -15,9 +14,9 @@
 #' Option:  if you set features, it will only delete columns in that set
 #'
 #' Option:  fix_place allows you to deal with nested places, that is State.or.Province is in Region is in Country.  For now, these are the 3 fixed places:
-#' places[1] $\subset$ places[2] $\subset$ places[3]
+#' places[1] subset places[2] subset places[3]
 #'
-#' In future release, this will be a variable!
+#' In future release, this will be a variable number of places!  but for now it only works with 3 (ordered) places
 #'
 #'
 #' @param data data.frame

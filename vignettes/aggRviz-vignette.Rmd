@@ -1,0 +1,95 @@
+---
+title: "Vignette Title"
+author: "Vignette Author"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+### Installation
+
+Install this package directly from GitHub:
+```
+devtools::install_github("amygoldlist/aggRviz")
+```
+
+### Overview
+
+The `aggRviz` package is used for analysis of Visier Inc. capstone project. This package will include several functions: 
+
+* `aggR_possible(data,number = NULL,features = names(data), keep = TRUE, all_symbol = "")`: each sublist contains a set of features that can be filtered out.
+
+	*Argument:*
+
+  `data` - a data frame
+  
+  `number` - the number of dimensions, default = Null = the largest number of dimensions
+  
+  `keep` - Checks through a dataframe and a vector of features that can be kept or deleted
+
+	*Value:*
+
+  Returns a list of all combinatoins of dismensions.
+
+
+
+* `aggRviz_filter2(data,col_2_delete = NULL, col_2_keep = NULL, features = NULL, all_symbol = "", fix_place = TRUE, places = c("State.or.Province", "Region", "Country"))`: 
+
+  *Arguments:*
+
+    `data` - a data frame
+
+    `col_2_delete = NULL` - This function filters out any row, stratified by those columns.
+    
+    `col_2_keep = NULL` - This function filters out any row, stratified by those columns.
+    
+    `features = NULL` - select the dimensions you want to keep or delete.
+
+  *Value:*
+
+    Return a data frame that filter out any unstratified rows from the other features.
+    
+
+
+* `filter_blanks(data, features = NULL, all_symbol = "")`: 
+
+  *Argument:*
+
+    `data` - a dataframe
+    
+    `features` - features you selected
+
+  *Value:*
+
+    Create a filtered dataframe with no blanks
+    
+    
+* `identify_measures(data, key = c("measure", "rate")`:
+  
+  *Argument:*
+
+    `data` - a dataframe
+    
+    `key` - terms that key metrics includes
+
+  *Value:*
+  
+    Return a vector of key metrics.
+    
+
+* `read_all_csv_skip_n((path,n=2, pattern = "*.csv"))`:
+
+  *Argument:*
+
+    `path` - a folder path
+    
+    `n` - the number of row you want to skip
+    
+    `pattern` - what kind of files you want to read
+
+  *Value:*
+  
+    Return a list of all datasets.

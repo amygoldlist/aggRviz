@@ -12,7 +12,7 @@
 #' @param y data.frame
 #'
 #' @return data.frame
-#' @export
+#'
 #'
 #'
 #'

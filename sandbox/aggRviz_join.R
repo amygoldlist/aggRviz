@@ -9,7 +9,7 @@
 #' This function will pick key column (such as "interesting rate" or proportion rate)
 #' and join two lowest datasets by common columns.
 #'
-#' THis is a new attempt, building on Fang's work
+#' This will still contain blanks, and will need filtering to use.
 #'
 #' The key is a vector of key words that make something important, (and included.)
 #'
@@ -20,7 +20,7 @@
 #' @param all_symbol character
 #'
 #' @return data.frame
-#' @export
+#'
 #'@examples
 #' load("../example_data/yummy.Rda")
 #' aggRviz_join(dat_1, dat_2)
@@ -42,8 +42,8 @@ aggRviz_join <- function(x,y, key = c("measure","rate"), col_2_ignore = NULL, al
       stop("Error:  please enter a vector of columns to ignore!")
     }
 
-    ### FILL IN THIS BIT!!
     ## rename each column in each dataframe
+    ## ie, if it's in col_2_ignore, then we need new names for each
     ## by appending an x or y to the end of the column
     col_2_rename <-
       col_2_ignore %>%

@@ -412,7 +412,7 @@ kprot_cluster <- function(dat1,dat2,n = NULL){
         for(i in 1:length(new_tenure)) display_name <- c(display_name,paste(new_tenure[[i]],collapse = "-"))
         display_name1 <- c(display_name1,paste(display_name,collapse=",")) 
       }
-
+      
       # create displayed list
       display_age_range <- c()
       for (i in 1:length(label_list)){

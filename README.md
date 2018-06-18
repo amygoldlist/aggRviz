@@ -123,7 +123,7 @@ This package includes several functions:
 ## Contributing
 
  Interested in contributing?
- See our [Contributing Guidelines](contributing.md) and [Code of Conduct](conduct.md).
+ See our [Contributing Guidelines](CONTRIBUTING.md) and [Code of Conduct](Conduct.md).
 
  ---
  <h6 align="center">

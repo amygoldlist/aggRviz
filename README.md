@@ -36,7 +36,7 @@ and to load:  `library(aggRviz)`
 
 ### Overview
 
-The `aggRviz` package is used for analysis of aggregated data. Privacy concerns mean that much of the data we need to analyze is already aggregated and annonimized.  Often this means it has been aggregated in different ways, and all of them are included in a dataset.  In this case, and individual may show up in several rows: for example, all the males who live in California, and all of the males who own pets.  This package contains several tools to take data in aggregated form, and return a tidy dataframe, where each individual dataapoint lies in exactly one row.
+The `aggRviz` package is used for analysis of aggregated data. Privacy concerns mean that much of the data we need to analyze is already aggregated and anonymized.  Often this means it has been aggregated in different ways, and all of them are included in a dataset.  In this case, and individual may show up in several rows: for example, all the males who live in California, and all of the males who own pets.  This package contains several tools to take data in aggregated form, and return a tidy dataframe, where each individual datapoint lies in exactly one row.
 
 
 This package includes several functions:
@@ -115,6 +115,21 @@ This package includes several functions:
 
     Return a list of all datasets.
 
-### Notes
 
- If you are not one of the contributors, and you decide to install, please pay careful note to any bugs, and let us know in an issue.
+## License
+
+ [MIT License](LICENSE)
+
+## Contributing
+
+ Interested in contributing?
+ See our [Contributing Guidelines](contributing.md) and [Code of Conduct](conduct.md).
+
+ ---
+ <h6 align="center">
+ Created by
+
+ [Amy Goldlist](https://github.com/amygoldlist) &nbsp;&middot;&nbsp;
+ [Susan Fung](https://github.com/susan-fung) &nbsp;&middot;&nbsp;
+ [Fang Yang](https://github.com/fyang95)
+ </a></h4>

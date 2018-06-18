@@ -34,6 +34,87 @@ Created by</a></h5>
 
 and to load:  `library(aggRviz)`
 
+### Overview
+
+The `aggRviz` package is used for analysis of aggregated data. Privacy concerns mean that much of the data we need to analyze is already aggregated and annonimized.  Often this means it has been aggregated in different ways, and all of them are included in a dataset.  In this case, and individual may show up in several rows: for example, all the males who live in California, and all of the males who own pets.  This package contains several tools to take data in aggregated form, and return a tidy dataframe, where each individual dataapoint lies in exactly one row.
+
+
+This package includes several functions:
+
+* `aggR_possible(data,number = NULL,features = names(data), keep = TRUE, all_symbol = "")`: each sublist contains a set of features that can be filtered out.
+
+	*Argument:*
+
+  `data` - a data frame
+
+  `number` - the number of dimensions, default = Null = the largest number of dimensions
+
+  `keep` - Checks through a dataframe and a vector of features that can be kept or deleted
+
+	*Value:*
+
+  Returns a list of all combinations of dismensions.
+
+
+
+* `aggRviz_filter2(data,col_2_delete = NULL, col_2_keep = NULL, features = NULL, all_symbol = "", fix_place = TRUE, places = c("State.or.Province", "Region", "Country"))`:
+
+  *Arguments:*
+
+    `data` - a data frame
+
+    `col_2_delete = NULL` - This function filters out any row, stratified by those columns.
+
+    `col_2_keep = NULL` - This function filters out any row, stratified by those columns.
+
+    `features = NULL` - select the dimensions you want to keep or delete.
+
+  *Value:*
+
+    Return a data frame that filter out any unstratified rows from the other features.
+
+
+
+* `filter_blanks(data, features = NULL, all_symbol = "")`:
+
+  *Argument:*
+
+    `data` - a dataframe
+
+    `features` - features you selected
+
+  *Value:*
+
+    Create a filtered dataframe with no blanks
+
+
+* `identify_measures(data, key = c("measure", "rate")`:
+
+  *Argument:*
+
+    `data` - a dataframe
+
+    `key` - terms that key metrics includes
+
+  *Value:*
+
+    Return a vector of key metrics.
+
+
+* `read_all_csv_skip_n((path,n=2, pattern = "*.csv"))`:
+
+  *Argument:*
+
+    `path` - a folder path
+
+    `n` - the number of row you want to skip
+
+    `pattern` - what kind of files you want to read
+
+  *Value:*
+
+    Return a list of all datasets.
+
 ### Notes
 
-This package is in development!  If you are not one of the contributors, and you decide to install, please pay careful note to any bugs, and let us know in an issue.
+ If you are not one of the contributors, and you decide to install, please pay careful note to any bugs, and let us know in an issue.

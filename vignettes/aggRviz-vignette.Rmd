@@ -25,7 +25,10 @@ browseVignettes('aggRviz')
 
 ### Overview
 
-The `aggRviz` package is used for analysis of Visier Inc. capstone project. This package will include several functions: 
+The `aggRviz` package is used for analysis of aggregated data. Privacy concerns mean that much of the data we need to analyze is already aggregated and anonymized.  Often this means it has been aggregated in different ways, and all of them are included in a dataset.  In this case, and individual may show up in several rows: for example, all the males who live in California, and all of the males who own pets.  This package contains several tools to take data in aggregated form, and return a tidy dataframe, where each individual datapoint lies in exactly one row.
+
+
+This package includes several functions: 
 
 * `aggR_possible(data,number = NULL,features = names(data), keep = TRUE, all_symbol = "")`: each sublist contains a set of features that can be filtered out.
 
@@ -39,7 +42,9 @@ The `aggRviz` package is used for analysis of Visier Inc. capstone project. This
 
 	*Value:*
 
-  Returns a list of all combinatoins of dismensions.
+  Returns a list of all combinations of dismensions.
+
+
 
 
 

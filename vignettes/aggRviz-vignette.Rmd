@@ -1,10 +1,10 @@
 ---
-title: "Vignette Title"
-author: "Vignette Author"
+title: "Vignette aggRviz"
+author: "Amy Goldlist, Susan Fung, Fang Yang"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteIndexEntry{Vignette aggRviz}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -13,7 +13,14 @@ vignette: >
 
 Install this package directly from GitHub:
 ```
-devtools::install_github("amygoldlist/aggRviz")
+devtools::install_github("amygoldlist/aggRviz", build_vignettes = TRUE, force = TRUE)
+```
+
+view vignette:
+
+```
+library(aggRviz)
+browseVignettes('aggRviz')
 ```
 
 ### Overview
